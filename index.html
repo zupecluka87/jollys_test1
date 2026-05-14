@@ -1,248 +1,1060 @@
 <!doctype html>
 <html lang="sl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>JOLLY-S Mizarstvo</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>JOLLY-S Mizarstvo</title>
 
-  <style>
-    :root{--paper:#faf8f4;--ink:#171717;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Inter",Arial,sans-serif}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans)}
-    img{display:block;width:100%}
-    a{text-decoration:none;color:inherit}
-    button{font:inherit;background:none;border:0;cursor:pointer}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .wrap{max-width:1920px;margin:auto;overflow:hidden;background:var(--paper)}
-    .container{padding-left:120px;padding-right:120px}
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    .header{position:fixed;z-index:50;top:0;left:0;right:0;height:110px;background:linear-gradient(to bottom,rgba(250,248,244,.96),rgba(250,248,244,.82));backdrop-filter:blur(16px)}
-    .header:after{content:"";position:absolute;left:0;right:0;bottom:-70px;height:70px;background:linear-gradient(to bottom,rgba(250,248,244,.75),rgba(250,248,244,0))}
-    .navrow{height:110px;display:grid;grid-template-columns:300px 1fr 188px 56px;align-items:center;gap:34px}
-    .brand{display:flex;align-items:center;gap:26px}
-    .logo{width:55px;height:65px;font-family:var(--serif);font-size:72px;line-height:.72;color:#9d7f6c;letter-spacing:-17px}
-    .brand-name{font-size:17px;font-weight:700;letter-spacing:9px}
-    .brand-sub{margin-top:10px;font-size:8px;font-weight:600;letter-spacing:7px;color:#918780}
-    .nav{display:flex;justify-content:center;gap:70px}
-    .nav a{font-size:11px;font-weight:700;text-transform:uppercase}
-    .btn-outline{height:58px;border:1px solid #b7a99e;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;text-transform:uppercase}
-    .menu{width:42px;height:30px;justify-self:end;position:relative}
-    .menu span,.menu:before,.menu:after{content:"";position:absolute;right:0;width:40px;height:1.5px;background:#6c625a}
-    .menu span{top:14px}.menu:before{top:0}.menu:after{bottom:0}
+<style>
 
-    .hero{position:relative;height:970px;padding-top:110px;background:var(--paper)}
-    .hero-img{position:absolute;right:0;top:96px;width:74.5%;height:835px;overflow:hidden}
-    .hero-img img{height:100%;object-fit:cover}
-    .hero-img:before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(to right,#faf8f4 0%,rgba(250,248,244,.96) 8%,rgba(250,248,244,.72) 23%,rgba(250,248,244,.18) 39%,rgba(250,248,244,0) 55%),linear-gradient(to bottom,rgba(250,248,244,.92),rgba(250,248,244,.22) 18%,rgba(250,248,244,0) 36%),linear-gradient(to top,rgba(250,248,244,.96),rgba(250,248,244,.16) 20%,rgba(250,248,244,0) 40%)}
-    .hero-inner{position:relative;z-index:5;height:860px;display:grid;grid-template-columns:55px 460px 1fr;gap:70px;align-items:center}
-    .pager{align-self:end;margin-bottom:145px;text-align:center;font-size:13px;color:#918982}
-    .pager b{display:block;color:#222;margin-bottom:14px}
-    .pager i{display:block;width:1px;height:52px;background:#a99d93;margin:0 auto 18px}
-    .pager span{display:block;margin:18px 0}
-    .eyebrow{font-size:12px;text-transform:uppercase;color:#6e665e;margin-bottom:35px;font-weight:600}
-    h1{font-family:var(--serif);font-size:70px;line-height:1.08;font-weight:500;text-transform:uppercase;margin:0 0 32px}
-    .small-line{width:47px;height:1px;background:#9d9186;margin-bottom:27px}
-    .lead{font-size:15px;line-height:1.8;margin:0 0 40px;font-weight:500}
-    .linkline{display:inline-grid;grid-template-columns:auto 68px;gap:24px;align-items:center;border-bottom:1px solid #aa9d93;padding-bottom:12px;min-width:306px;font-size:11px;font-weight:700;text-transform:uppercase;color:#6d635b}
-    .linkline em{font-style:normal;text-align:right;font-size:22px}
+:root{
+  --bg:#f8f5f1;
+  --white:#ffffff;
+  --line:#ddd3ca;
+  --text:#1d1b1a;
+  --muted:#7a7168;
+  --gold:#ab9584;
 
-    .features{height:205px;background:rgba(255,255,255,.64)}
-    .features-grid{height:205px;display:grid;grid-template-columns:repeat(4,1fr);align-items:center}
-    .feature{display:grid;grid-template-columns:58px 1fr;gap:26px;padding-right:55px;position:relative}
-    .feature:not(:last-child):after{content:"";position:absolute;right:22px;top:10px;bottom:10px;width:1px;background:#e0d7ce}
-    .ico{width:42px;height:42px;stroke:#aa8d7d;fill:none;stroke-width:1.45;stroke-linecap:round;stroke-linejoin:round}
-    .feature h3{font-family:var(--serif);font-size:23px;margin:0 0 20px}
-    .feature p{font-size:11px;line-height:1.8;margin:0;font-weight:500}
+  --serif:'Cormorant Garamond', serif;
+  --sans:'Inter', sans-serif;
+}
 
-    .projects{padding:68px 0 48px;background:#fff}
-    .projects-grid{display:grid;grid-template-columns:285px 1fr;gap:72px}
-    .kicker{font-size:9px;font-weight:700;text-transform:uppercase;color:#6b625b;margin-bottom:20px}
-    h2{font-family:var(--serif);font-size:44px;line-height:1.03;font-weight:500;margin:0 0 52px}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-    .project-img{aspect-ratio:1.36/1;overflow:hidden;background:#ddd}
-    .project-img img{height:100%;object-fit:cover}
-    .project h3{font-size:13px;margin:16px 0 7px}
-    .project p{font-size:10px;text-transform:uppercase;color:#7d746c;margin:0}
-    .arrows{display:flex;justify-content:flex-end;gap:18px;margin-top:25px}
-    .round{width:55px;height:55px;border-radius:50%;border:1px solid #c9bdb4;font-size:24px}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    .materials{display:grid;grid-template-columns:370px 1fr;background:#f4efe9}
-    .materials-left{padding:38px 0 38px 120px}
-    .materials-left h2{font-size:40px;margin-bottom:34px}
-    .materials-left p{font-size:11px;line-height:1.75;max-width:245px;margin:0 0 28px}
-    .matgrid{display:grid;grid-template-columns:repeat(4,1fr)}
-    .mat{height:340px;position:relative;overflow:hidden;color:#fff;display:flex;align-items:flex-end}
-    .mat img{position:absolute;inset:0;height:100%;object-fit:cover}
-    .mat:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.62),rgba(0,0,0,.06) 62%)}
-    .mat div{position:relative;z-index:2;padding:0 35px 35px}
-    .mat h3{font-family:var(--serif);font-size:26px;margin:0 0 10px}
-    .mat p{font-size:11px;line-height:1.6;margin:0}
-    .plus{position:absolute;right:22px;bottom:25px;z-index:4;width:34px;height:34px;border:1px solid rgba(255,255,255,.7);border-radius:50%;display:grid;place-items:center}
+html{
+  scroll-behavior:smooth;
+}
 
-    .process{padding:40px 0 44px;background:#fff}
-    .process-grid{display:grid;grid-template-columns:285px 1fr;gap:85px}
-    .process h2{font-size:39px;margin:0}
-    .steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;margin-top:28px}
-    .steps:before{content:"";position:absolute;left:90px;right:90px;top:17px;height:1px;background:#d9d0c7}
-    .step{text-align:center;position:relative;background:#fff}
-    .step .ico{width:30px;height:30px;background:#fff;margin:0 auto 4px}
-    .dot{position:absolute;left:50%;top:15px;transform:translateX(-50%);width:5px;height:5px;border-radius:50%;background:#9e8878}
-    .step b{display:block;font-size:9px;color:#8b8077;margin-bottom:9px}
-    .step h3{font-family:var(--serif);font-size:16px;margin:0 0 7px}
-    .step p{font-size:8.5px;line-height:1.45;margin:0;color:#5f574f}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  overflow-x:hidden;
+}
 
-    .cta{position:relative;height:165px;color:white;overflow:hidden}
-    .cta img{position:absolute;inset:0;height:100%;object-fit:cover;filter:brightness(.75) saturate(.85)}
-    .cta:after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(75,62,51,.65),rgba(75,62,51,.08),rgba(228,219,209,.92))}
-    .cta-grid{position:relative;z-index:2;height:165px;display:grid;grid-template-columns:1fr 420px;align-items:center}
-    .cta h2{color:#fff;font-size:37px;margin:0 0 18px}
-    .cta .linkline{background:#fff;color:#4f4740;border:0;min-width:170px;padding:13px 18px}
-    .contact{color:#2f2b27;font-size:14px;line-height:2.25;padding-left:55px}
+img{
+  width:100%;
+  display:block;
+}
 
-    .footer{background:#f0e9e2;padding:27px 0 22px}
-    .footer-grid{display:grid;grid-template-columns:300px 170px 230px 1fr;gap:55px}
-    .footer .logo{font-size:43px;width:36px;height:42px;letter-spacing:-10px}
-    .footer .brand-name{font-size:11px;letter-spacing:5px}.footer .brand-sub{font-size:6px;letter-spacing:4px}
-    .footer p,.footer a,.footer li{font-size:10px;line-height:1.8;margin:0;color:#554d46}
-    .footer h4{margin:0 0 11px;font-size:9px;text-transform:uppercase}
-    .footer ul{list-style:none;padding:0;margin:0}
-    .newsletter{height:42px;display:grid;grid-template-columns:1fr 50px;border:1px solid #c8bdb4;max-width:385px;background:#f6f0ea;margin-top:14px}
-    .newsletter input{border:0;background:transparent;padding:0 15px;font-size:10px}
-    .newsletter button{border-left:1px solid #c8bdb4}
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
-    @media(max-width:1100px){
-      .container{padding-left:28px;padding-right:28px}
-      .header,.navrow{height:86px}.navrow{grid-template-columns:1fr 42px}.nav,.btn-outline{display:none}
-      .hero{height:auto;padding-top:86px}.hero-img{top:86px;width:100%;height:650px;opacity:.78}
-      .hero-inner{height:650px;display:block;padding-top:85px}.pager{display:none}h1{font-size:48px}
-      .features,.features-grid{height:auto}.features-grid,.projects-grid,.cards,.materials,.matgrid,.process-grid,.steps,.cta-grid,.footer-grid{grid-template-columns:1fr}
-      .feature{padding:28px 0}.feature:after,.steps:before{display:none}
-      .materials-left{padding:35px 28px}.mat{height:270px}
-    }
-  </style>
+.container{
+  width:100%;
+  padding-left:110px;
+  padding-right:110px;
+}
+
+/* HEADER */
+
+.header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+
+  height:108px;
+
+  background:rgba(248,245,241,.88);
+
+  backdrop-filter:blur(14px);
+}
+
+.header::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-80px;
+  height:80px;
+
+  background:linear-gradient(to bottom,
+  rgba(248,245,241,.85),
+  rgba(248,245,241,0));
+}
+
+.navbar{
+  height:108px;
+
+  display:grid;
+  grid-template-columns:260px 1fr 190px 60px;
+  align-items:center;
+}
+
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+
+.logo-mark{
+  font-family:var(--serif);
+  font-size:74px;
+  letter-spacing:-17px;
+  color:#a18875;
+  line-height:.7;
+}
+
+.logo-title{
+  font-size:17px;
+  letter-spacing:10px;
+  font-weight:700;
+}
+
+.logo-sub{
+  margin-top:10px;
+  font-size:8px;
+  letter-spacing:7px;
+  color:#8f857c;
+}
+
+.nav{
+  display:flex;
+  justify-content:center;
+  gap:62px;
+}
+
+.nav a{
+  font-size:11px;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.cta-btn{
+  height:56px;
+  border:1px solid #b9ab9f;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:11px;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.burger{
+  width:40px;
+  height:24px;
+  position:relative;
+  justify-self:end;
+}
+
+.burger span,
+.burger::before,
+.burger::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:100%;
+  height:1.5px;
+  background:#6f665f;
+}
+
+.burger span{
+  top:11px;
+}
+
+.burger::before{
+  top:0;
+}
+
+.burger::after{
+  bottom:0;
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  height:960px;
+  padding-top:108px;
+  overflow:hidden;
+}
+
+.hero-image{
+  position:absolute;
+  right:0;
+  top:90px;
+
+  width:74%;
+  height:850px;
+
+  overflow:hidden;
+}
+
+.hero-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* BLEED */
+
+.hero-image::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+
+  background:
+  linear-gradient(to right,
+  rgba(248,245,241,1) 0%,
+  rgba(248,245,241,.95) 8%,
+  rgba(248,245,241,.65) 22%,
+  rgba(248,245,241,.15) 40%,
+  rgba(248,245,241,0) 58%),
+
+  linear-gradient(to top,
+  rgba(248,245,241,.9),
+  rgba(248,245,241,0) 28%),
+
+  linear-gradient(to bottom,
+  rgba(248,245,241,.9),
+  rgba(248,245,241,0) 20%);
+}
+
+.hero-content{
+  position:relative;
+  z-index:5;
+
+  height:820px;
+
+  display:grid;
+  grid-template-columns:60px 450px 1fr;
+  align-items:center;
+  gap:80px;
+}
+
+.slider{
+  align-self:end;
+  margin-bottom:140px;
+}
+
+.slider strong{
+  display:block;
+  margin-bottom:14px;
+  font-size:13px;
+}
+
+.slider-line{
+  width:1px;
+  height:54px;
+  background:#aa9f96;
+  margin-bottom:20px;
+}
+
+.slider span{
+  display:block;
+  margin:18px 0;
+  color:#958b83;
+}
+
+.eyebrow{
+  margin-bottom:38px;
+
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+
+  color:#726960;
+}
+
+.hero h1{
+  font-family:var(--serif);
+  font-size:74px;
+  line-height:1.02;
+  font-weight:500;
+
+  text-transform:uppercase;
+
+  margin-bottom:34px;
+}
+
+.small-line{
+  width:48px;
+  height:1px;
+  background:#a89b8e;
+  margin-bottom:28px;
+}
+
+.hero p{
+  font-size:15px;
+  line-height:1.9;
+  margin-bottom:44px;
+}
+
+.link{
+  display:inline-grid;
+  grid-template-columns:auto 70px;
+  gap:20px;
+
+  align-items:center;
+
+  border-bottom:1px solid #b8aca1;
+
+  padding-bottom:12px;
+
+  min-width:280px;
+
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+}
+
+.link span:last-child{
+  text-align:right;
+  font-size:22px;
+}
+
+/* FEATURES */
+
+.features{
+  background:rgba(255,255,255,.55);
+}
+
+.features-grid{
+  height:205px;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  align-items:center;
+}
+
+.feature{
+  display:grid;
+  grid-template-columns:60px 1fr;
+  gap:24px;
+
+  position:relative;
+}
+
+.feature:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  right:25px;
+  top:0;
+  bottom:0;
+  width:1px;
+  background:#e2d9d0;
+}
+
+.feature-icon{
+  width:42px;
+  height:42px;
+  border:1px solid #c7b5a8;
+  border-radius:50%;
+}
+
+.feature h3{
+  font-family:var(--serif);
+  font-size:25px;
+  margin-bottom:18px;
+}
+
+.feature p{
+  font-size:11px;
+  line-height:1.8;
+  max-width:220px;
+}
+
+/* PROJECTS */
+
+.projects{
+  padding:80px 0 60px;
+  background:#fff;
+}
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:70px;
+}
+
+.kicker{
+  margin-bottom:22px;
+
+  font-size:9px;
+  text-transform:uppercase;
+  font-weight:700;
+  letter-spacing:.08em;
+
+  color:#706760;
+}
+
+.section-title{
+  font-family:var(--serif);
+  font-size:52px;
+  line-height:1;
+  font-weight:500;
+
+  margin-bottom:50px;
+}
+
+.project-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+
+.project-image{
+  aspect-ratio:1.32/1;
+  overflow:hidden;
+}
+
+.project-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.project h3{
+  margin-top:16px;
+  margin-bottom:8px;
+
+  font-size:14px;
+}
+
+.project p{
+  font-size:10px;
+  text-transform:uppercase;
+  color:#7f756d;
+}
+
+.arrows{
+  display:flex;
+  justify-content:flex-end;
+  gap:18px;
+  margin-top:26px;
+}
+
+.arrow{
+  width:56px;
+  height:56px;
+
+  border-radius:50%;
+  border:1px solid #cdbfb3;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:24px;
+}
+
+/* MATERIALS */
+
+.materials{
+  display:grid;
+  grid-template-columns:360px 1fr;
+}
+
+.material-left{
+  background:#f5efe9;
+  padding:42px 0 42px 110px;
+}
+
+.material-left p{
+  margin-bottom:32px;
+  max-width:230px;
+  font-size:11px;
+  line-height:1.8;
+}
+
+.material-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.material-card{
+  position:relative;
+  height:340px;
+  overflow:hidden;
+  color:white;
+
+  display:flex;
+  align-items:flex-end;
+}
+
+.material-card img{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.material-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(to top,
+  rgba(0,0,0,.62),
+  rgba(0,0,0,.05) 60%);
+}
+
+.material-content{
+  position:relative;
+  z-index:2;
+  padding:34px;
+}
+
+.material-content h3{
+  font-family:var(--serif);
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.material-content p{
+  font-size:11px;
+  line-height:1.6;
+}
+
+.plus{
+  position:absolute;
+  right:20px;
+  bottom:20px;
+
+  z-index:3;
+
+  width:34px;
+  height:34px;
+
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.7);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* PROCESS */
+
+.process{
+  background:#fff;
+  padding:45px 0;
+}
+
+.process-grid{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:80px;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  position:relative;
+  margin-top:28px;
+}
+
+.steps::before{
+  content:"";
+  position:absolute;
+  left:90px;
+  right:90px;
+  top:16px;
+
+  height:1px;
+  background:#ddd1c6;
+}
+
+.step{
+  text-align:center;
+  position:relative;
+}
+
+.dot{
+  position:absolute;
+  top:14px;
+  left:50%;
+  transform:translateX(-50%);
+
+  width:5px;
+  height:5px;
+
+  background:#a48d7c;
+  border-radius:50%;
+}
+
+.step-number{
+  margin-top:16px;
+  margin-bottom:10px;
+
+  font-size:9px;
+  color:#8d8279;
+}
+
+.step h4{
+  font-family:var(--serif);
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.step p{
+  font-size:8.5px;
+  line-height:1.5;
+}
+
+/* CTA */
+
+.cta{
+  position:relative;
+  height:170px;
+  overflow:hidden;
+}
+
+.cta img{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:brightness(.75);
+}
+
+.cta::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(to right,
+  rgba(70,56,46,.7),
+  rgba(70,56,46,.05),
+  rgba(233,223,214,.9));
+}
+
+.cta-grid{
+  position:relative;
+  z-index:3;
+
+  height:170px;
+
+  display:grid;
+  grid-template-columns:1fr 420px;
+  align-items:center;
+}
+
+.cta-title{
+  color:white;
+}
+
+.cta-title h2{
+  color:white;
+}
+
+.contact{
+  color:#2d2925;
+  line-height:2.4;
+}
+
+/* FOOTER */
+
+.footer{
+  background:#f1e9e2;
+  padding:30px 0 22px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:300px 170px 230px 1fr;
+  gap:50px;
+}
+
+.footer p,
+.footer li{
+  font-size:10px;
+  line-height:1.9;
+  color:#5d554d;
+}
+
+.footer h4{
+  margin-bottom:12px;
+
+  font-size:9px;
+  text-transform:uppercase;
+}
+
+.footer ul{
+  list-style:none;
+}
+
+.newsletter{
+  margin-top:16px;
+
+  height:42px;
+
+  border:1px solid #cabdb1;
+
+  display:grid;
+  grid-template-columns:1fr 50px;
+}
+
+.newsletter input{
+  border:none;
+  background:transparent;
+  padding:0 14px;
+}
+
+.newsletter button{
+  border-left:1px solid #cabdb1;
+  background:transparent;
+}
+
+@media(max-width:1100px){
+
+  .container{
+    padding-left:28px;
+    padding-right:28px;
+  }
+
+  .navbar{
+    grid-template-columns:1fr 40px;
+  }
+
+  .nav,
+  .cta-btn{
+    display:none;
+  }
+
+  .hero{
+    height:auto;
+  }
+
+  .hero-image{
+    width:100%;
+    height:650px;
+  }
+
+  .hero-content{
+    grid-template-columns:1fr;
+    height:auto;
+    padding-top:120px;
+  }
+
+  .slider{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:52px;
+  }
+
+  .features-grid,
+  .projects-grid,
+  .project-cards,
+  .materials,
+  .material-grid,
+  .process-grid,
+  .steps,
+  .cta-grid,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
-<div class="wrap">
 
 <header class="header">
-  <div class="container navrow">
-    <a class="brand" href="#domov">
-      <div class="logo">JS</div>
-      <div><div class="brand-name">JOLLY-S</div><div class="brand-sub">MIZARSTVO</div></div>
-    </a>
+  <div class="container navbar">
+
+    <div class="logo-wrap">
+      <div class="logo-mark">JS</div>
+
+      <div>
+        <div class="logo-title">JOLLY-S</div>
+        <div class="logo-sub">MIZARSTVO</div>
+      </div>
+    </div>
+
     <nav class="nav">
-      <a href="#domov">Domov</a><a href="#projekti">Projekti</a><a href="#storitve">Storitve</a><a href="#materiali">Materiali</a><a href="#onas">O nas</a><a href="#kontakt">Kontakt</a>
+      <a href="#">DOMOV</a>
+      <a href="#">PROJEKTI</a>
+      <a href="#">STORITVE</a>
+      <a href="#">MATERIALI</a>
+      <a href="#">O NAS</a>
+      <a href="#">KONTAKT</a>
     </nav>
-    <a href="#kontakt" class="btn-outline">Povpraševanje</a>
-    <button class="menu"><span></span></button>
+
+    <a href="#" class="cta-btn">POVPRAŠEVANJE</a>
+
+    <div class="burger">
+      <span></span>
+    </div>
+
   </div>
 </header>
 
-<main>
-<section id="domov" class="hero">
-  <div class="hero-img"><img src="assets/hero-kuhinja.jpg" alt="Kuhinja po meri"></div>
-  <div class="container hero-inner">
-    <div class="pager"><b>01</b><i></i><span>02</span><span>03</span></div>
-    <div>
-      <div class="eyebrow">Mizarstvo po meri</div>
-      <h1>Prostori,<br>ustvarjeni<br>za življenje.</h1>
-      <div class="small-line"></div>
-      <p class="lead">Pohištvo in notranje rešitve po meri.<br>Natančno. Estetsko. Brezčasno.</p>
-      <a class="linkline" href="#projekti"><span>Oglejte si projekte</span><em>→</em></a>
+<section class="hero">
+
+  <div class="hero-image">
+
+    <!-- GLAVNA HERO SLIKA -->
+    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1800&auto=format&fit=crop" alt="Kuhinja">
+
+  </div>
+
+  <div class="container hero-content">
+
+    <div class="slider">
+      <strong>01</strong>
+      <div class="slider-line"></div>
+      <span>02</span>
+      <span>03</span>
     </div>
-  </div>
-</section>
 
-<section id="storitve" class="features">
-  <div class="container features-grid">
-    <article class="feature"><svg class="ico" viewBox="0 0 48 48"><path d="M8 37c12-2 20-11 25-27M13 31C8 22 10 14 19 8c5 10 3 18-4 24M30 21c6-7 12-9 18-6-2 10-9 14-19 12M29 29v11M10 40h30"/></svg><div><h3>Po meri</h3><p>Vsak kos je načrtovan in izdelan po vaših željah in potrebah.</p></div></article>
-    <article class="feature"><svg class="ico" viewBox="0 0 48 48"><path d="M10 8h28v32H10zM16 13v22M24 13v22M32 13v22M18 24h3M26 24h3M34 24h2"/></svg><div><h3>Kakovost</h3><p>Uporabljamo preverjene materiale in vrhunske okovje.</p></div></article>
-    <article class="feature"><svg class="ico" viewBox="0 0 48 48"><path d="M24 7c5 0 8 4 8 8s-3 8-8 8-8-4-8-8 3-8 8-8zM10 40c1-8 6-13 14-13s13 5 14 13M12 33l-5 4 4 4M36 33l5 4-4 4"/></svg><div><h3>Natančnost</h3><p>Najvišja stopnja natančnosti pri načrtovanju in izvedbi.</p></div></article>
-    <article class="feature"><svg class="ico" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 13v11l8-5M35 10l3-3M13 10l-3-3"/></svg><div><h3>Brezčasnost</h3><p>Estetika, ki ostane lepa in funkcionalna leta.</p></div></article>
-  </div>
-</section>
-
-<section id="projekti" class="projects">
-  <div class="container projects-grid">
-    <aside>
-      <div class="kicker">Izbrani projekti</div>
-      <h2>Projekti,<br>ki govorijo<br>same zase.</h2>
-      <a class="linkline" href="#"><span>Vsi projekti</span><em>→</em></a>
-    </aside>
     <div>
-      <div class="cards">
-        <article class="project"><div class="project-img"><img src="assets/projekt-1.jpg"></div><h3>Stanovanje Ljubljana</h3><p>Kuhinja · Dnevni prostor</p></article>
-        <article class="project"><div class="project-img"><img src="assets/projekt-2.jpg"></div><h3>Hiša Medvode</h3><p>Dnevni prostor</p></article>
-        <article class="project"><div class="project-img"><img src="assets/projekt-3.jpg"></div><h3>Vila Bled</h3><p>Kopalnica</p></article>
+
+      <div class="eyebrow">
+        MIZARSTVO PO MERI
       </div>
-      <div class="arrows"><button class="round">←</button><button class="round">→</button></div>
+
+      <h1>
+        PROSTORI,<br>
+        USTVARJENI<br>
+        ZA ŽIVLJENJE.
+      </h1>
+
+      <div class="small-line"></div>
+
+      <p>
+        Pohištvo in notranje rešitve po meri.<br>
+        Natančno. Estetsko. Brezčasno.
+      </p>
+
+      <a href="#" class="link">
+        <span>OGLEJTE SI PROJEKTE</span>
+        <span>→</span>
+      </a>
+
     </div>
+
   </div>
+
 </section>
 
-<section id="materiali" class="materials">
-  <aside class="materials-left">
-    <div class="kicker">Materiali</div>
-    <h2>Naravni materiali.<br>Pošten pristop.</h2>
-    <p>Izbiramo materiale vrhunske kakovosti, ki prostoru dodajo toplino in karakter.</p>
-    <a class="linkline" href="#"><span>Raziščite materiale</span><em>→</em></a>
-  </aside>
-  <div class="matgrid">
-    <article class="mat"><img src="assets/material-les.jpg"><div><h3>Les</h3><p>Toplina in naravnost naravnega lesa.</p></div><span class="plus">+</span></article>
-    <article class="mat"><img src="assets/material-kamen.jpg"><div><h3>Kamen</h3><p>Eleganca in trajnost v vsakem detajlu.</p></div><span class="plus">+</span></article>
-    <article class="mat"><img src="assets/material-kovina.jpg"><div><h3>Kovina</h3><p>Moderne linije, trdna izvedba.</p></div><span class="plus">+</span></article>
-    <article class="mat"><img src="assets/material-tekstil.jpg"><div><h3>Tekstil</h3><p>Mehkoba, udobje in prefinjenost.</p></div><span class="plus">+</span></article>
-  </div>
-</section>
+<section class="features">
 
-<section id="onas" class="process">
-  <div class="container process-grid">
-    <aside><div class="kicker">Naš proces</div><h2>Od ideje<br>do popolnega<br>prostora.</h2></aside>
-    <div class="steps">
-      <article class="step"><svg class="ico" viewBox="0 0 48 48"><circle cx="17" cy="17" r="6"/><circle cx="31" cy="17" r="6"/><path d="M9 39c1-8 5-12 12-12M27 27c7 0 11 4 12 12"/></svg><span class="dot"></span><b>01</b><h3>Svetovanje</h3><p>Prisluhnemo vašim željam<br>in potrebam.</p></article>
-      <article class="step"><svg class="ico" viewBox="0 0 48 48"><path d="M10 9h28v30H10zM16 15h16M16 22h16M16 29h10"/></svg><span class="dot"></span><b>02</b><h3>Načrtovanje</h3><p>Ustvarimo funkcionalne<br>in estetske rešitve.</p></article>
-      <article class="step"><svg class="ico" viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><path d="M17 25l5 5 10-13"/></svg><span class="dot"></span><b>03</b><h3>Izdelava</h3><p>Natančna izdelava<br>v naši delavnici.</p></article>
-      <article class="step"><svg class="ico" viewBox="0 0 48 48"><path d="M17 9h14v9h8v21H9V18h8zM17 18h14M15 39V27h18v12"/></svg><span class="dot"></span><b>04</b><h3>Montaža</h3><p>Strokovna montaža in<br>popolna izvedba.</p></article>
+  <div class="container features-grid">
+
+    <div class="feature">
+      <div class="feature-icon"></div>
+      <div>
+        <h3>Po meri</h3>
+        <p>Vsak kos je načrtovan in izdelan po vaših željah in potrebah.</p>
+      </div>
     </div>
-  </div>
-</section>
 
-<section id="kontakt" class="cta">
-  <img src="assets/cta-sedezna.jpg">
-  <div class="container cta-grid">
-    <div><h2>Imate idejo?<br>Uresničimo jo skupaj.</h2><a class="linkline" href="mailto:info@jolly-s.si"><span>Stopite v stik</span><em>→</em></a></div>
-    <div class="contact">
-      <div>♡ 041 622 220</div>
-      <div>✉ info@jolly-s.si</div>
-      <div>⌖ Pod Jelšami 10, 1290 Grosuplje</div>
+    <div class="feature">
+      <div class="feature-icon"></div>
+      <div>
+        <h3>Kakovost</h3>
+        <p>Uporabljamo preverjene materiale in vrhunske okovje.</p>
+      </div>
     </div>
-  </div>
-</section>
-</main>
 
-<footer class="footer">
-  <div class="container footer-grid">
+    <div class="feature">
+      <div class="feature-icon"></div>
+      <div>
+        <h3>Natančnost</h3>
+        <p>Najvišja stopnja natančnosti pri načrtovanju in izvedbi.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon"></div>
+      <div>
+        <h3>Brezčasnost</h3>
+        <p>Estetika, ki ostane lepa in funkcionalna leta.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="projects">
+
+  <div class="container projects-grid">
+
     <div>
-      <a class="brand" href="#domov"><div class="logo">JS</div><div><div class="brand-name">JOLLY-S</div><div class="brand-sub">MIZARSTVO</div></div></a>
-      <p style="margin-top:16px">Mizarstvo po meri za domove,<br>ki trajajo.</p>
-      <p style="margin-top:18px;font-size:9px;color:#837970">© 2024 JOLLY-S d.o.o. Vse pravice pridržane.</p>
-    </div>
-    <div><h4>Hitre povezave</h4><ul><li>Domov</li><li>Projekti</li><li>Storitve</li><li>Materiali</li><li>O nas</li><li>Kontakt</li></ul></div>
-    <div><h4>Storitve</h4><ul><li>Kuhinje</li><li>Dnevni prostori</li><li>Spalnice</li><li>Kopalnice</li><li>Poslovni prostori</li><li>Notranja oprema</li></ul></div>
-    <div>
-      <h4>Prijavite se na e-novice</h4>
-      <p>Bodite obveščeni o novih projektih<br>in materialih.</p>
-      <form class="newsletter"><input placeholder="Vaš e-mail naslov"><button type="button">→</button></form>
-    </div>
-  </div>
-</footer>
 
-</div>
+      <div class="kicker">
+        IZBRANI PROJEKTI
+      </div>
+
+      <div class="section-title">
+        Projekti,<br>
+        ki govorijo<br>
+        same zase.
+      </div>
+
+      <a href="#" class="link">
+        <span>VSI PROJEKTI</span>
+        <span>→</span>
+      </a>
+
+    </div>
+
+    <div>
+
+      <div class="project-cards">
+
+        <div class="project">
+
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop">
+          </div>
+
+          <h3>Stanovanje Ljubljana</h3>
+          <p>KUHINJA · DNEVNI PROSTOR</p>
+
+        </div>
+
+        <div class="project">
+
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+          </div>
+
+          <h3>Hiša Medvode</h3>
+          <p>DNEVNI PROSTOR</p>
+
+        </div>
+
+        <div class="project">
+
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+          </div>
+
+          <h3>Vila Bled</h3>
+          <p>KOPALNICA</p>
+
+        </div>
+
+      </div>
+
+      <div class="arrows">
+
+        <div class="arrow">←</div>
+        <div class="arrow">→</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="materials">
+
+  <div class="material-left">
+
+    <div class="kicker">
+      MATERIALI
+    </div>
+
+    <div class="section-title">
+      Naravni materiali.<br>
+      Pošten pristop.
+    </div>
+
+    <p>
+      Izbiramo materiale vrhunske kakovosti,
+      ki prostoru dodajo toplino in karakter.
+    </p>
+
+    <a href="#" class="link">
+      <span>RAZIŠČITE MATERIALE</span>
+      <span>→</span>
+    </a>
+
+  </div>
+
+  <div class="material-grid">
+
+    <div class="material-card">
+
+      <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="material-content">
+        <h3>Les</h3>
+        <p>Toplina in naravnost naravnega lesa.</p>
+      </div>
+
+      <div class="plus">+</div>
+
+    </div>
+
+    <div class="material-card">
+
+      <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="material-content">
+        <h3>Kamen</h3>
+        <p>Eleganca in trajnost v vsakem detajlu.</p>
+      </div>
+
+      <div class="plus">+</div>
+
+    </div>
+
+    <div class="material-card">
+
+      <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="material-content">
+        <h3>Kovina</h3>
+        <p>Moderne linije, trdna izvedba.</p>
+      </div>
+
+      <div class="plus">+</div>
+
+    </div>
+
+    <div class="material-card">
+
+      <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="material-content">
+        <h3>Tekstil</h3>
+        <p>Mehkoba, udobje in prefinjenost.</p>
+      </div>
+
+      <div class="plus">+</div>
+
+    </div>
+
+  </div>
+
+</section>
+
 </body>
 </html>
