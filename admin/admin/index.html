@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JOLLY-S Admin</title>
+<style>
+:root{--bg:#f7f3ee;--card:#fff;--text:#191715;--muted:#766d65;--line:#ded4cb;--accent:#9d7f6c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}
+header{padding:28px 34px;background:#eee6de;border-bottom:1px solid var(--line)}
+h1{margin:0;font-size:25px}
+header p{margin:8px 0 0;color:var(--muted);font-size:13px}
+main{display:grid;grid-template-columns:280px 1fr;gap:24px;padding:24px}
+aside{position:sticky;top:20px;align-self:start;background:var(--card);border:1px solid var(--line);padding:16px}
+aside a{display:block;padding:10px 12px;color:var(--text);text-decoration:none;border-radius:8px;font-size:13px}
+aside a:hover{background:#f3ede7}
+section{background:var(--card);border:1px solid var(--line);padding:22px;margin-bottom:22px}
+h2{margin:0 0 18px;font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+label{display:block;font-size:12px;font-weight:700;margin-bottom:6px}
+input,textarea{width:100%;border:1px solid var(--line);padding:11px 12px;font:inherit;font-size:13px;background:#fff}
+textarea{min-height:78px;resize:vertical}
+.full{grid-column:1/-1}
+.note{font-size:12px;color:var(--muted);line-height:1.55;margin-top:6px}
+.actions{position:sticky;bottom:0;background:#eee6de;border-top:1px solid var(--line);padding:16px 24px;display:flex;gap:12px;justify-content:flex-end}
+button{border:0;padding:12px 18px;font-weight:700;cursor:pointer}
+.primary{background:var(--accent);color:white}
+.secondary{background:white;border:1px solid var(--line)}
+.preview{max-width:180px;border:1px solid var(--line);margin-top:8px;aspect-ratio:16/9;object-fit:cover;background:#eee}
+.codebox{background:#1d1b1a;color:#fff;padding:14px;white-space:pre-wrap;font-size:12px;line-height:1.55;overflow:auto}
+@media(max-width:900px){main{grid-template-columns:1fr}.grid{grid-template-columns:1fr}aside{position:static}}
+</style>
+</head>
+<body>
+<header>
+<h1>JOLLY-S Admin urejevalnik</h1>
+<p>Uredi tekst in slike. Na koncu klikni »Prenesi site-data.js« in datoteko zamenjaj v mapi <b>data/site-data.js</b>.</p>
+</header>
+
+<main>
+<aside>
+<a href="#hero">Hero</a>
+<a href="#features">Po meri / Kakovost</a>
+<a href="#projekti">Projekti</a>
+<a href="#materiali">Materiali</a>
+<a href="#proces">Proces</a>
+<a href="#kontakt">Kontakt</a>
+<a href="#footer">Footer</a>
+<a href="#slike">Velikosti slik</a>
+</aside>
+
+<div>
+<section id="hero">
+<h2>Hero / prva stran</h2>
+<div class="grid">
+<div><label>Hero slika URL</label><input data-key="heroImage"><p class="note">Priporočeno: 2200 × 1400 px, JPG/WebP, horizontalna slika.</p><img class="preview" data-preview="heroImage"></div>
+<div><label>Nadnaslov</label><input data-key="heroEyebrow"></div>
+<div class="full"><label>Glavni naslov</label><textarea data-key="heroTitle"></textarea><p class="note">Za novo vrstico uporabi &lt;br&gt;</p></div>
+<div class="full"><label>Opis</label><textarea data-key="heroText"></textarea></div>
+<div><label>Gumb</label><input data-key="heroButton"></div>
+</div>
+</section>
+
+<section id="features">
+<h2>Sekcija Po meri / Kakovost / Natančnost / Brezčasnost</h2>
+<div class="grid">
+<div><label>Naslov 1</label><input data-key="feature1Title"><label>Opis 1</label><textarea data-key="feature1Text"></textarea></div>
+<div><label>Naslov 2</label><input data-key="feature2Title"><label>Opis 2</label><textarea data-key="feature2Text"></textarea></div>
+<div><label>Naslov 3</label><input data-key="feature3Title"><label>Opis 3</label><textarea data-key="feature3Text"></textarea></div>
+<div><label>Naslov 4</label><input data-key="feature4Title"><label>Opis 4</label><textarea data-key="feature4Text"></textarea></div>
+</div>
+</section>
+
+<section id="projekti">
+<h2>Projekti</h2>
+<div class="grid">
+<div><label>Nadnaslov</label><input data-key="projectsKicker"></div>
+<div><label>Gumb</label><input data-key="projectsButton"></div>
+<div class="full"><label>Naslov sekcije</label><textarea data-key="projectsTitle"></textarea></div>
+
+<div><label>Projekt 1 slika</label><input data-key="project1Image"><p class="note">Priporočeno: 1200 × 900 px.</p><img class="preview" data-preview="project1Image"></div>
+<div><label>Projekt 1 naslov</label><input data-key="project1Title"><label>Projekt 1 opis</label><input data-key="project1Sub"></div>
+
+<div><label>Projekt 2 slika</label><input data-key="project2Image"><p class="note">Priporočeno: 1200 × 900 px.</p><img class="preview" data-preview="project2Image"></div>
+<div><label>Projekt 2 naslov</label><input data-key="project2Title"><label>Projekt 2 opis</label><input data-key="project2Sub"></div>
+
+<div><label>Projekt 3 slika</label><input data-key="project3Image"><p class="note">Priporočeno: 1200 × 900 px.</p><img class="preview" data-preview="project3Image"></div>
+<div><label>Projekt 3 naslov</label><input data-key="project3Title"><label>Projekt 3 opis</label><input data-key="project3Sub"></div>
+</div>
+</section>
+
+<section id="materiali">
+<h2>Materiali</h2>
+<div class="grid">
+<div><label>Nadnaslov</label><input data-key="materialsKicker"></div>
+<div><label>Gumb</label><input data-key="materialsButton"></div>
+<div class="full"><label>Naslov sekcije</label><textarea data-key="materialsTitle"></textarea></div>
+<div class="full"><label>Opis sekcije</label><textarea data-key="materialsText"></textarea></div>
+
+<div><label>Material 1 slika</label><input data-key="material1Image"><p class="note">Priporočeno: 900 × 1200 px.</p><img class="preview" data-preview="material1Image"></div>
+<div><label>Material 1 naslov</label><input data-key="material1Title"><label>Material 1 opis</label><textarea data-key="material1Text"></textarea></div>
+
+<div><label>Material 2 slika</label><input data-key="material2Image"><p class="note">Priporočeno: 900 × 1200 px.</p><img class="preview" data-preview="material2Image"></div>
+<div><label>Material 2 naslov</label><input data-key="material2Title"><label>Material 2 opis</label><textarea data-key="material2Text"></textarea></div>
+
+<div><label>Material 3 slika</label><input data-key="material3Image"><p class="note">Priporočeno: 900 × 1200 px.</p><img class="preview" data-preview="material3Image"></div>
+<div><label>Material 3 naslov</label><input data-key="material3Title"><label>Material 3 opis</label><textarea data-key="material3Text"></textarea></div>
+
+<div><label>Material 4 slika</label><input data-key="material4Image"><p class="note">Priporočeno: 900 × 1200 px.</p><img class="preview" data-preview="material4Image"></div>
+<div><label>Material 4 naslov</label><input data-key="material4Title"><label>Material 4 opis</label><textarea data-key="material4Text"></textarea></div>
+</div>
+</section>
+
+<section id="proces">
+<h2>Proces</h2>
+<div class="grid">
+<div><label>Nadnaslov</label><input data-key="processKicker"></div>
+<div class="full"><label>Naslov sekcije</label><textarea data-key="processTitle"></textarea></div>
+<div><label>Korak 1 naslov</label><input data-key="step1Title"><label>Korak 1 opis</label><textarea data-key="step1Text"></textarea></div>
+<div><label>Korak 2 naslov</label><input data-key="step2Title"><label>Korak 2 opis</label><textarea data-key="step2Text"></textarea></div>
+<div><label>Korak 3 naslov</label><input data-key="step3Title"><label>Korak 3 opis</label><textarea data-key="step3Text"></textarea></div>
+<div><label>Korak 4 naslov</label><input data-key="step4Title"><label>Korak 4 opis</label><textarea data-key="step4Text"></textarea></div>
+</div>
+</section>
+
+<section id="kontakt">
+<h2>Kontakt / CTA</h2>
+<div class="grid">
+<div><label>CTA slika</label><input data-key="ctaImage"><p class="note">Priporočeno: 1800 × 600 px.</p><img class="preview" data-preview="ctaImage"></div>
+<div><label>CTA gumb</label><input data-key="ctaButton"></div>
+<div class="full"><label>CTA naslov</label><textarea data-key="ctaTitle"></textarea></div>
+<div><label>Telefon</label><input data-key="phone"></div>
+<div><label>Email</label><input data-key="email"></div>
+<div class="full"><label>Naslov</label><input data-key="address"></div>
+</div>
+</section>
+
+<section id="footer">
+<h2>Footer</h2>
+<div class="grid">
+<div><label>Logo znak</label><input data-key="footerLogoMark"></div>
+<div><label>Logo naslov</label><input data-key="footerLogoTitle"></div>
+<div><label>Logo podnaslov</label><input data-key="footerLogoSub"></div>
+<div><label>Copyright</label><input data-key="copyright"></div>
+<div class="full"><label>Footer opis</label><textarea data-key="footerText"></textarea></div>
+<div><label>Newsletter naslov</label><input data-key="newsletterTitle"></div>
+<div class="full"><label>Newsletter tekst</label><textarea data-key="newsletterText"></textarea></div>
+</div>
+</section>
+
+<section id="slike">
+<h2>Mape, podmape in priporočene velikosti slik</h2>
+<div class="codebox">assets/
+└── images/
+    ├── hero/
+    │   └── hero-kuhinja.jpg        2200 × 1400 px
+    ├── projekti/
+    │   ├── projekt-1.jpg           1200 × 900 px
+    │   ├── projekt-2.jpg           1200 × 900 px
+    │   └── projekt-3.jpg           1200 × 900 px
+    ├── materiali/
+    │   ├── material-les.jpg        900 × 1200 px
+    │   ├── material-kamen.jpg      900 × 1200 px
+    │   ├── material-kovina.jpg     900 × 1200 px
+    │   └── material-tekstil.jpg    900 × 1200 px
+    ├── cta/
+    │   └── cta-sedezna.jpg         1800 × 600 px
+    └── logo/
+        └── logo.svg ali logo.png   500 × 500 px
+
+Priporočilo:
+- format: WebP ali JPG
+- kakovost: 75–85 %
+- hero slika: do 600 KB
+- projekt slika: do 350 KB
+- material slika: do 300 KB
+- CTA slika: do 450 KB</div>
+</section>
+</div>
+</main>
+
+<div class="actions">
+<button class="secondary" onclick="copyCode()">Kopiraj site-data.js</button>
+<button class="primary" onclick="downloadData()">Prenesi site-data.js</button>
+</div>
+
+<script src="../data/site-data.js"></script>
+<script>
+let data = window.SITE_DATA || {};
+
+function fill(){
+  document.querySelectorAll("[data-key]").forEach(input=>{
+    const key = input.dataset.key;
+    input.value = data[key] || "";
+    input.addEventListener("input", ()=>{
+      data[key] = input.value;
+      updatePreviews();
+    });
+  });
+  updatePreviews();
+}
+
+function updatePreviews(){
+  document.querySelectorAll("[data-preview]").forEach(img=>{
+    const key = img.dataset.preview;
+    img.src = data[key] || "";
+  });
+}
+
+function buildFile(){
+  return "window.SITE_DATA = " + JSON.stringify(data, null, 2) + ";\\n";
+}
+
+function downloadData(){
+  const blob = new Blob([buildFile()], {type:"application/javascript"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "site-data.js";
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function copyCode(){
+  navigator.clipboard.writeText(buildFile());
+  alert("Koda je kopirana. Prilepi jo v data/site-data.js");
+}
+
+fill();
+</script>
+</body>
+</html>
