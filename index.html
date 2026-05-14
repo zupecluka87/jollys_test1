@@ -1,367 +1,80 @@
 <!doctype html>
 <html lang="sl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JOLLY-S Mizarstvo</title>
 
-  <title>JOLLY-S Mizarstvo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:#f4eee6;color:#24211d}
+a{text-decoration:none;color:inherit}
+header{position:fixed;top:0;left:0;width:100%;z-index:20;padding:30px 64px;display:flex;justify-content:space-between;align-items:center;background:rgba(244,238,230,.92);backdrop-filter:blur(14px)}
+.logo{display:flex;align-items:center;gap:16px}
+.logo-mark{font-family:"Cormorant Garamond",serif;font-size:58px;color:#b89c7d;line-height:1}
+.logo-text{font-size:13px;letter-spacing:.34em;line-height:1.7}
+nav{display:flex;gap:38px;align-items:center;font-size:13px;letter-spacing:.08em}
+.nav-btn{border:1px solid #bfa98f;padding:14px 22px}
+.hero{min-height:100vh;display:grid;grid-template-columns:42% 58%}
+.hero-left{padding:170px 70px 70px;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-size:13px;letter-spacing:.2em;color:#817469;margin-bottom:36px}
+h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:88px;line-height:.95;margin-bottom:42px}
+.hero-left p{font-size:18px;line-height:1.9;color:#62584f;max-width:430px;margin-bottom:46px}
+.link{display:inline-block;font-size:14px;letter-spacing:.12em;border-bottom:1px solid #b8a895;padding-bottom:10px;width:max-content}
+.hero-img{background:linear-gradient(90deg,#f4eee6 0%,rgba(244,238,230,.68) 18%,rgba(244,238,230,0) 40%),url("https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1800&q=90") center/cover}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #ded2c2;border-bottom:1px solid #ded2c2}
+.benefit{padding:48px;border-right:1px solid #ded2c2}
+.benefit:last-child{border-right:0}
+.benefit h3{font-family:"Cormorant Garamond",serif;font-size:34px;margin-bottom:16px}
+.benefit p{line-height:1.8;color:#6b6056}
+section{padding:110px 70px}
+.section-grid{display:grid;grid-template-columns:320px 1fr;gap:60px}
+.section-title{font-family:"Cormorant Garamond",serif;font-size:62px;line-height:1}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.project img{width:100%;height:430px;object-fit:cover}
+.project h4{font-size:22px;font-weight:500;margin:18px 0 8px}
+.project span{font-size:13px;letter-spacing:.1em;color:#83766a}
+.materials{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.material{height:420px;background:#d8c7b5;position:relative;overflow:hidden}
+.material img{width:100%;height:100%;object-fit:cover}
+.material div{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),transparent);display:flex;align-items:flex-end;padding:28px;color:white}
+.material h4{font-family:"Cormorant Garamond",serif;font-size:38px}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center}
+.process h3{font-family:"Cormorant Garamond",serif;font-size:34px;margin:16px 0}
+.process p{color:#6b6056;line-height:1.7}
+.contact{display:grid;grid-template-columns:1fr 1fr;padding:0;margin:80px 70px 110px}
+.contact-img{background:url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1500&q=90") center/cover;min-height:470px}
+.contact-box{background:#e6d8c8;padding:90px;display:flex;flex-direction:column;justify-content:center}
+.contact-box h2{font-family:"Cormorant Garamond",serif;font-size:68px;line-height:1;margin-bottom:32px}
+footer{background:#eee2d5;padding:70px;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+footer h4{font-size:13px;letter-spacing:.14em;margin-bottom:20px}
+footer p,footer a{display:block;color:#62584f;margin-bottom:12px}
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-      background:#f6f2ed;
-      color:#1f1f1c;
-      font-family:Inter,sans-serif;
-      overflow-x:hidden;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    img{
-      width:100%;
-      display:block;
-    }
-
-    header{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      z-index:100;
-      padding:28px 60px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:rgba(246,242,237,.9);
-      backdrop-filter:blur(12px);
-    }
-
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-
-    .logo-mark{
-      font-family:"Cormorant Garamond",serif;
-      font-size:54px;
-      color:#b69d84;
-      line-height:1;
-    }
-
-    .logo-text{
-      font-size:13px;
-      letter-spacing:.35em;
-      line-height:1.7;
-    }
-
-    nav{
-      display:flex;
-      align-items:center;
-      gap:44px;
-      font-size:13px;
-      letter-spacing:.08em;
-    }
-
-    .btn-outline{
-      border:1px solid #c8b7a3;
-      padding:15px 24px;
-      border-radius:2px;
-      transition:.3s;
-    }
-
-    .btn-outline:hover{
-      background:#1f1f1c;
-      color:#fff;
-    }
-
-    .hero{
-      min-height:100vh;
-      display:grid;
-      grid-template-columns:42% 58%;
-      align-items:center;
-    }
-
-    .hero-left{
-      padding:160px 70px 80px;
-      position:relative;
-    }
-
-    .eyebrow{
-      font-size:13px;
-      letter-spacing:.18em;
-      color:#85796d;
-      margin-bottom:40px;
-    }
-
-    h1{
-      font-family:"Cormorant Garamond",serif;
-      font-size:88px;
-      line-height:.95;
-      font-weight:500;
-      margin-bottom:42px;
-    }
-
-    .hero-text{
-      font-size:18px;
-      line-height:1.9;
-      color:#60564d;
-      max-width:420px;
-      margin-bottom:50px;
-    }
-
-    .hero-link{
-      display:inline-flex;
-      align-items:center;
-      gap:18px;
-      font-size:14px;
-      letter-spacing:.12em;
-      border-bottom:1px solid #b9aa98;
-      padding-bottom:10px;
-    }
-
-    .hero-image{
-      height:100vh;
-      background:
-      linear-gradient(90deg,#f6f2ed 0%,rgba(246,242,237,.65) 18%,rgba(246,242,237,0) 38%),
-      url("https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1600&q=80") center/cover;
-    }
-
-    .features{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:0;
-      border-top:1px solid #e5d9ca;
-      border-bottom:1px solid #e5d9ca;
-    }
-
-    .feature{
-      padding:48px;
-      border-right:1px solid #e5d9ca;
-    }
-
-    .feature:last-child{
-      border-right:none;
-    }
-
-    .feature h3{
-      font-family:"Cormorant Garamond",serif;
-      font-size:34px;
-      margin-bottom:16px;
-    }
-
-    .feature p{
-      line-height:1.8;
-      color:#6d6258;
-    }
-
-    section{
-      padding:110px 70px;
-    }
-
-    .section-grid{
-      display:grid;
-      grid-template-columns:320px 1fr;
-      gap:60px;
-      align-items:start;
-    }
-
-    .section-title{
-      font-family:"Cormorant Garamond",serif;
-      font-size:62px;
-      line-height:1;
-      margin-top:18px;
-    }
-
-    .projects{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:26px;
-    }
-
-    .project-card img{
-      height:420px;
-      object-fit:cover;
-      border-radius:4px;
-      margin-bottom:18px;
-    }
-
-    .project-card h4{
-      font-size:22px;
-      margin-bottom:10px;
-      font-weight:500;
-    }
-
-    .project-card span{
-      color:#86796d;
-      letter-spacing:.08em;
-      font-size:13px;
-    }
-
-    .materials{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
-    }
-
-    .material{
-      position:relative;
-      overflow:hidden;
-      border-radius:4px;
-    }
-
-    .material img{
-      height:420px;
-      object-fit:cover;
-    }
-
-    .material-overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to top,rgba(0,0,0,.55),transparent);
-      display:flex;
-      align-items:flex-end;
-      padding:30px;
-      color:#fff;
-    }
-
-    .material-overlay h4{
-      font-family:"Cormorant Garamond",serif;
-      font-size:38px;
-      margin-bottom:8px;
-    }
-
-    .process{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:40px;
-      text-align:center;
-    }
-
-    .process-item h3{
-      font-family:"Cormorant Garamond",serif;
-      font-size:34px;
-      margin:18px 0;
-    }
-
-    .contact{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      min-height:420px;
-      margin-top:80px;
-    }
-
-    .contact-image{
-      background:url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80") center/cover;
-    }
-
-    .contact-content{
-      background:#e9ddd0;
-      padding:90px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-
-    .contact-content h2{
-      font-family:"Cormorant Garamond",serif;
-      font-size:68px;
-      line-height:1;
-      margin-bottom:30px;
-    }
-
-    footer{
-      background:#f1e7dc;
-      padding:70px;
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:40px;
-    }
-
-    .footer-col h4{
-      margin-bottom:20px;
-      letter-spacing:.12em;
-      font-size:13px;
-    }
-
-    .footer-col a{
-      display:block;
-      margin-bottom:12px;
-      color:#655b52;
-    }
-
-    @media(max-width:1000px){
-
-      header{
-        padding:24px;
-      }
-
-      nav{
-        display:none;
-      }
-
-      .hero{
-        grid-template-columns:1fr;
-      }
-
-      .hero-image{
-        height:60vh;
-      }
-
-      .hero-left{
-        padding:140px 24px 60px;
-      }
-
-      h1{
-        font-size:58px;
-      }
-
-      .features,
-      .projects,
-      .materials,
-      .process,
-      .contact,
-      .section-grid{
-        grid-template-columns:1fr;
-      }
-
-      section{
-        padding:80px 24px;
-      }
-
-      footer{
-        padding:50px 24px;
-      }
-
-    }
-  </style>
+@media(max-width:950px){
+header{padding:24px}
+nav{display:none}
+.hero{grid-template-columns:1fr}
+.hero-left{padding:140px 28px 60px}
+h1{font-size:58px}
+.hero-img{height:60vh}
+.benefits,.section-grid,.projects,.materials,.process,.contact{grid-template-columns:1fr}
+section{padding:80px 28px}
+.contact{margin:40px 28px 80px}
+footer{padding:50px 28px}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-
   <div class="logo">
     <div class="logo-mark">JS</div>
-
-    <div class="logo-text">
-      JOLLY-S<br>
-      MIZARSTVO
-    </div>
+    <div class="logo-text">JOLLY-S<br>MIZARSTVO</div>
   </div>
 
   <nav>
@@ -371,275 +84,129 @@
     <a href="#">MATERIALI</a>
     <a href="#">O NAS</a>
     <a href="#">KONTAKT</a>
-
-    <a class="btn-outline" href="#">
-      POVPRAŠEVANJE
-    </a>
+    <a class="nav-btn" href="#">POVPRAŠEVANJE</a>
   </nav>
-
 </header>
 
+<main>
+
 <section class="hero">
-
   <div class="hero-left">
-
-    <div class="eyebrow">
-      MIZARSTVO PO MERI
-    </div>
-
-    <h1>
-      PROSTORI,<br>
-      USTVARJENI<br>
-      ZA ŽIVLJENJE.
-    </h1>
-
-    <p class="hero-text">
-      Pohištvo in notranje rešitve po meri.
-      Natančno. Estetsko. Brezčasno.
-    </p>
-
-    <a class="hero-link" href="#">
-      OGLEJTE SI PROJEKTE →
-    </a>
-
+    <div class="eyebrow">MIZARSTVO PO MERI</div>
+    <h1>PROSTORI,<br>USTVARJENI<br>ZA ŽIVLJENJE.</h1>
+    <p>Pohištvo in notranje rešitve po meri. Natančno. Estetsko. Brezčasno.</p>
+    <a class="link" href="#">OGLEJTE SI PROJEKTE →</a>
   </div>
-
-  <div class="hero-image"></div>
-
+  <div class="hero-img"></div>
 </section>
 
-<section class="features">
-
-  <div class="feature">
-    <h3>Po meri</h3>
-    <p>Vsak kos je načrtovan in izdelan po vaših željah.</p>
-  </div>
-
-  <div class="feature">
-    <h3>Kakovost</h3>
-    <p>Uporabljamo preverjene materiale in vrhunsko obdelavo.</p>
-  </div>
-
-  <div class="feature">
-    <h3>Natančnost</h3>
-    <p>Vsak detajl je premišljeno izveden.</p>
-  </div>
-
-  <div class="feature">
-    <h3>Brezčasnost</h3>
-    <p>Minimalističen dizajn, ki ostane eleganten leta.</p>
-  </div>
-
-</section>
+<div class="benefits">
+  <div class="benefit"><h3>Po meri</h3><p>Vsak kos je načrtovan in izdelan po vašem prostoru.</p></div>
+  <div class="benefit"><h3>Kakovost</h3><p>Izbrani materiali, natančna izdelava in trajnost.</p></div>
+  <div class="benefit"><h3>Detajli</h3><p>Premišljeni spoji, robovi, teksture in zaključki.</p></div>
+  <div class="benefit"><h3>Minimalizem</h3><p>Čist dizajn, ki prostoru doda mir in eleganco.</p></div>
+</div>
 
 <section>
-
   <div class="section-grid">
-
     <div>
       <div class="eyebrow">IZBRANI PROJEKTI</div>
-
-      <div class="section-title">
-        Projekti,<br>
-        ki govorijo<br>
-        sami zase.
-      </div>
+      <div class="section-title">Projekti,<br>ki govorijo<br>sami zase.</div>
     </div>
 
     <div class="projects">
-
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80">
-        <h4>Stanovanje Ljubljana</h4>
-        <span>KUHINJA · DNEVNI PROSTOR</span>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=90">
+        <h4>Kuhinja po meri</h4>
+        <span>KUHINJA · INTERIER</span>
       </div>
-
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80">
-        <h4>Hiša Medvode</h4>
-        <span>DNEVNI PROSTOR</span>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=90">
+        <h4>Dnevni prostor</h4>
+        <span>OMARE · TV STENA</span>
       </div>
-
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80">
-        <h4>Vila Bled</h4>
-        <span>KOPALNICA</span>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=90">
+        <h4>Kopalniški elementi</h4>
+        <span>KOPALNICA · PO MERI</span>
       </div>
-
     </div>
-
   </div>
-
 </section>
 
 <section>
-
   <div class="section-grid">
-
     <div>
-      <div class="eyebrow">MATERIALI</div>
-
-      <div class="section-title">
-        Naravni materiali.<br>
-        Pošten pristop.
-      </div>
+      <div class="eyebrow">MOOD BOARD</div>
+      <div class="section-title">Materiali,<br>barve in<br>teksture.</div>
     </div>
 
     <div class="materials">
-
-      <div class="material">
-        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80">
-
-        <div class="material-overlay">
-          <div>
-            <h4>Les</h4>
-            <p>Toplina in naravnost.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="material">
-        <img src="https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=900&q=80">
-
-        <div class="material-overlay">
-          <div>
-            <h4>Kamen</h4>
-            <p>Eleganca in trajnost.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="material">
-        <img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?auto=format&fit=crop&w=900&q=80">
-
-        <div class="material-overlay">
-          <div>
-            <h4>Kovina</h4>
-            <p>Minimalna moč.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="material">
-        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80">
-
-        <div class="material-overlay">
-          <div>
-            <h4>Tekstil</h4>
-            <p>Mehkoba in udobje.</p>
-          </div>
-        </div>
-      </div>
-
+      <div class="material"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=90"><div><h4>Les</h4></div></div>
+      <div class="material"><img src="https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=900&q=90"><div><h4>Kamen</h4></div></div>
+      <div class="material"><img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?auto=format&fit=crop&w=900&q=90"><div><h4>Kovina</h4></div></div>
+      <div class="material"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=90"><div><h4>Tekstil</h4></div></div>
     </div>
-
   </div>
-
 </section>
 
 <section>
-
   <div class="section-grid">
-
     <div>
-      <div class="eyebrow">NAŠ PROCES</div>
-
-      <div class="section-title">
-        Od ideje<br>
-        do popolnega<br>
-        prostora.
-      </div>
+      <div class="eyebrow">PROCES</div>
+      <div class="section-title">Od ideje<br>do končne<br>montaže.</div>
     </div>
 
     <div class="process">
-
-      <div class="process-item">
-        <div class="eyebrow">01</div>
-        <h3>Svetovanje</h3>
-        <p>Prilagojeno vašim željam in prostoru.</p>
-      </div>
-
-      <div class="process-item">
-        <div class="eyebrow">02</div>
-        <h3>Načrtovanje</h3>
-        <p>Funkcionalne in estetske rešitve.</p>
-      </div>
-
-      <div class="process-item">
-        <div class="eyebrow">03</div>
-        <h3>Izdelava</h3>
-        <p>Natančna izdelava v naši delavnici.</p>
-      </div>
-
-      <div class="process-item">
-        <div class="eyebrow">04</div>
-        <h3>Montaža</h3>
-        <p>Strokovna in popolna izvedba.</p>
-      </div>
-
+      <div><div class="eyebrow">01</div><h3>Svetovanje</h3><p>Pogovor o prostoru, željah in možnostih.</p></div>
+      <div><div class="eyebrow">02</div><h3>Načrt</h3><p>Premišljena rešitev za vsak kotiček.</p></div>
+      <div><div class="eyebrow">03</div><h3>Izdelava</h3><p>Natančna izdelava v delavnici.</p></div>
+      <div><div class="eyebrow">04</div><h3>Montaža</h3><p>Čista in strokovna izvedba pri vas.</p></div>
     </div>
-
   </div>
-
 </section>
 
 <section class="contact">
-
-  <div class="contact-image"></div>
-
-  <div class="contact-content">
-
-    <div class="eyebrow">
-      IMATE IDEJO?
-    </div>
-
-    <h2>
-      Uresničimo jo skupaj.
-    </h2>
-
-    <a class="btn-outline" href="#">
-      STOPITE V STIK
-    </a>
-
+  <div class="contact-img"></div>
+  <div class="contact-box">
+    <div class="eyebrow">IMATE IDEJO?</div>
+    <h2>Uresničimo jo skupaj.</h2>
+    <a class="nav-btn" href="#">STOPITE V STIK</a>
   </div>
-
 </section>
 
+</main>
+
 <footer>
-
-  <div class="footer-col">
+  <div>
     <h4>JOLLY-S</h4>
-    <a href="#">Mizarstvo po meri</a>
-    <a href="#">Staje 8a, 1292 Ig</a>
+    <p>Mizarstvo po meri</p>
+    <p>Staje 8a, 1292 Ig</p>
   </div>
-
-  <div class="footer-col">
+  <div>
     <h4>POVEZAVE</h4>
     <a href="#">Domov</a>
     <a href="#">Projekti</a>
     <a href="#">Materiali</a>
     <a href="#">Kontakt</a>
   </div>
-
-  <div class="footer-col">
+  <div>
     <h4>KONTAKT</h4>
     <a href="#">041 622 220</a>
     <a href="#">info@jolly-s.si</a>
   </div>
-
 </footer>
 
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
 <script>
 if(window.netlifyIdentity){
-window.netlifyIdentity.on("init",user=>{
-if(!user){
-window.netlifyIdentity.on("login",()=>{
-document.location.href="/admin/";
-});
-}
-});
+  window.netlifyIdentity.on("init",user=>{
+    if(!user){
+      window.netlifyIdentity.on("login",()=>{
+        document.location.href="/admin/";
+      });
+    }
+  });
 }
 </script>
 
