@@ -1,10 +1,8 @@
-napiši sedaj kot celota
 <!doctype html>
 <html lang="sl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>JOLLY-S Mizarstvo</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,54 +11,28 @@ napiši sedaj kot celota
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
   --bg:#f8f5f1;
-  --white:#ffffff;
+  --white:#fff;
   --line:#ddd3ca;
   --text:#1d1b1a;
   --muted:#7a7168;
   --gold:#ab9584;
-
-  --serif:'Cormorant Garamond', serif;
-  --sans:'Inter', sans-serif;
+  --footer:#f1e9e2;
+  --taupe:#d8ccc1;
+  --serif:'Cormorant Garamond',serif;
+  --sans:'Inter',sans-serif;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden}
+img{display:block;width:100%}
+a{text-decoration:none;color:inherit}
+button,input{font-family:inherit}
+.container{width:100%;padding-left:110px;padding-right:110px}
 
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--sans);
-  overflow-x:hidden;
-}
-
-img{
-  width:100%;
-  display:block;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-.container{
-  width:100%;
-  padding-left:110px;
-  padding-right:110px;
-}
-
-/* HEADER */
-
+/* HEADER - slika gre pod glavo */
 .header{
   position:absolute;
   top:0;
@@ -68,8 +40,8 @@ a{
   right:0;
   z-index:100;
   height:108px;
-  background:rgba(248,245,241,.88);
-  backdrop-filter:blur(14px);
+  background:linear-gradient(to bottom,rgba(248,245,241,.76),rgba(248,245,241,.38));
+  backdrop-filter:blur(10px);
 }
 
 .header::after{
@@ -77,11 +49,10 @@ a{
   position:absolute;
   left:0;
   right:0;
-  bottom:-80px;
-  height:80px;
-  background:linear-gradient(to bottom,
-  rgba(248,245,241,.85),
-  rgba(248,245,241,0));
+  bottom:-90px;
+  height:90px;
+  background:linear-gradient(to bottom,rgba(248,245,241,.45),rgba(248,245,241,0));
+  pointer-events:none;
 }
 
 .navbar{
@@ -91,12 +62,7 @@ a{
   align-items:center;
 }
 
-.logo-wrap{
-  display:flex;
-  align-items:center;
-  gap:26px;
-}
-
+.logo-wrap{display:flex;align-items:center;gap:26px}
 .logo-mark{
   font-family:var(--serif);
   font-size:74px;
@@ -104,31 +70,11 @@ a{
   color:#a18875;
   line-height:.7;
 }
+.logo-title{font-size:17px;letter-spacing:10px;font-weight:700}
+.logo-sub{margin-top:10px;font-size:8px;letter-spacing:7px;color:#8f857c;font-weight:600}
 
-.logo-title{
-  font-size:17px;
-  letter-spacing:10px;
-  font-weight:700;
-}
-
-.logo-sub{
-  margin-top:10px;
-  font-size:8px;
-  letter-spacing:7px;
-  color:#8f857c;
-}
-
-.nav{
-  display:flex;
-  justify-content:center;
-  gap:62px;
-}
-
-.nav a{
-  font-size:11px;
-  text-transform:uppercase;
-  font-weight:700;
-}
+.nav{display:flex;justify-content:center;gap:62px}
+.nav a{font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:.02em}
 
 .cta-btn{
   height:56px;
@@ -139,18 +85,11 @@ a{
   font-size:11px;
   text-transform:uppercase;
   font-weight:700;
+  letter-spacing:.02em;
 }
 
-.burger{
-  width:40px;
-  height:24px;
-  position:relative;
-  justify-self:end;
-}
-
-.burger span,
-.burger::before,
-.burger::after{
+.burger{width:40px;height:24px;position:relative;justify-self:end}
+.burger span,.burger::before,.burger::after{
   content:"";
   position:absolute;
   left:0;
@@ -158,26 +97,24 @@ a{
   height:1.5px;
   background:#6f665f;
 }
-
-.burger span{top:11px;}
-.burger::before{top:0;}
-.burger::after{bottom:0;}
+.burger span{top:11px}
+.burger::before{top:0}
+.burger::after{bottom:0}
 
 /* HERO */
-
 .hero{
   position:relative;
-  height:970px;
-  padding-top:108px;
+  height:855px;
   overflow:hidden;
+  background:var(--bg);
 }
 
 .hero-image{
   position:absolute;
   right:0;
-  top:90px;
+  top:0;
   width:74%;
-  height:850px;
+  height:855px;
   overflow:hidden;
 }
 
@@ -185,6 +122,7 @@ a{
   width:100%;
   height:100%;
   object-fit:cover;
+  object-position:center;
 }
 
 .hero-image::before{
@@ -192,57 +130,39 @@ a{
   position:absolute;
   inset:0;
   z-index:2;
-
+  pointer-events:none;
   background:
-  linear-gradient(to right,
-  rgba(248,245,241,1) 0%,
-  rgba(248,245,241,.95) 8%,
-  rgba(248,245,241,.65) 22%,
-  rgba(248,245,241,.15) 40%,
-  rgba(248,245,241,0) 58%),
-
-  linear-gradient(to top,
-  rgba(248,245,241,.9),
-  rgba(248,245,241,0) 28%),
-
-  linear-gradient(to bottom,
-  rgba(248,245,241,.9),
-  rgba(248,245,241,0) 20%);
+    linear-gradient(to right,
+      rgba(248,245,241,1) 0%,
+      rgba(248,245,241,.96) 8%,
+      rgba(248,245,241,.68) 23%,
+      rgba(248,245,241,.18) 42%,
+      rgba(248,245,241,0) 60%),
+    linear-gradient(to bottom,
+      rgba(248,245,241,.72) 0%,
+      rgba(248,245,241,.28) 14%,
+      rgba(248,245,241,0) 34%),
+    linear-gradient(to top,
+      rgba(248,245,241,.92) 0%,
+      rgba(248,245,241,.12) 22%,
+      rgba(248,245,241,0) 40%);
 }
 
 .hero-content{
   position:relative;
   z-index:5;
-  height:820px;
+  height:855px;
+  padding-top:108px;
   display:grid;
   grid-template-columns:60px 450px 1fr;
   align-items:center;
   gap:80px;
 }
 
-.slider{
-  align-self:end;
-  margin-bottom:140px;
-}
-
-.slider strong{
-  display:block;
-  margin-bottom:14px;
-  font-size:13px;
-}
-
-.slider-line{
-  width:1px;
-  height:54px;
-  background:#aa9f96;
-  margin-bottom:20px;
-}
-
-.slider span{
-  display:block;
-  margin:18px 0;
-  color:#958b83;
-}
+.slider{align-self:end;margin-bottom:120px}
+.slider strong{display:block;margin-bottom:14px;font-size:13px}
+.slider-line{width:1px;height:54px;background:#aa9f96;margin:0 auto 20px}
+.slider span{display:block;margin:18px 0;color:#958b83;text-align:center;font-size:13px}
 
 .eyebrow{
   margin-bottom:38px;
@@ -250,6 +170,7 @@ a{
   text-transform:uppercase;
   letter-spacing:.08em;
   color:#726960;
+  font-weight:600;
 }
 
 .hero h1{
@@ -257,22 +178,13 @@ a{
   font-size:74px;
   line-height:1.02;
   font-weight:500;
+  letter-spacing:-.035em;
   text-transform:uppercase;
   margin-bottom:34px;
 }
 
-.small-line{
-  width:48px;
-  height:1px;
-  background:#a89b8e;
-  margin-bottom:28px;
-}
-
-.hero p{
-  font-size:15px;
-  line-height:1.9;
-  margin-bottom:44px;
-}
+.small-line{width:48px;height:1px;background:#a89b8e;margin-bottom:28px}
+.hero p{font-size:15px;line-height:1.9;margin-bottom:44px;font-weight:500}
 
 .link{
   display:inline-grid;
@@ -285,34 +197,25 @@ a{
   font-size:11px;
   font-weight:700;
   text-transform:uppercase;
+  letter-spacing:.04em;
 }
-
-.link span:last-child{
-  text-align:right;
-  font-size:22px;
-}
+.link span:last-child{text-align:right;font-size:22px;font-weight:400}
 
 /* FEATURES */
-
-.features{
-  height:205px;
-  background:rgba(255,255,255,.55);
-}
-
+.features{height:205px;background:rgba(255,255,255,.55)}
 .features-grid{
   height:205px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
   align-items:center;
 }
-
 .feature{
   display:grid;
   grid-template-columns:60px 1fr;
   gap:24px;
   position:relative;
+  padding-right:42px;
 }
-
 .feature:not(:last-child)::after{
   content:"";
   position:absolute;
@@ -322,39 +225,30 @@ a{
   width:1px;
   background:#e2d9d0;
 }
-
 .feature-icon{
   width:42px;
   height:42px;
-  border:1px solid #c7b5a8;
-  border-radius:50%;
+  color:#aa8d7d;
 }
-
-.feature h3{
-  font-family:var(--serif);
-  font-size:25px;
-  margin-bottom:18px;
+.feature-icon svg{
+  width:42px;
+  height:42px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:1.35;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
-
-.feature p{
-  font-size:11px;
-  line-height:1.8;
-  max-width:220px;
-}
+.feature h3{font-family:var(--serif);font-size:25px;margin-bottom:18px;font-weight:600}
+.feature p{font-size:11px;line-height:1.8;max-width:220px;color:#3b3631;font-weight:500}
 
 /* PROJECTS */
-
-.projects{
-  padding:80px 0 60px;
-  background:#fff;
-}
-
+.projects{padding:80px 0 60px;background:#fff}
 .projects-grid{
   display:grid;
   grid-template-columns:280px 1fr;
   gap:70px;
 }
-
 .kicker{
   margin-bottom:22px;
   font-size:9px;
@@ -363,64 +257,138 @@ a{
   letter-spacing:.08em;
   color:#706760;
 }
-
 .section-title{
   font-family:var(--serif);
   font-size:52px;
   line-height:1;
   font-weight:500;
+  letter-spacing:-.025em;
   margin-bottom:50px;
 }
-
 .project-cards{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:28px;
 }
-
-.project-image{
-  aspect-ratio:1.32/1;
-  overflow:hidden;
+.project-image{aspect-ratio:1.32/1;overflow:hidden;background:#ddd}
+.project-image img{width:100%;height:100%;object-fit:cover}
+.project h3{margin-top:16px;margin-bottom:8px;font-size:14px;font-weight:700}
+.project p{font-size:10px;text-transform:uppercase;color:#7f756d;letter-spacing:.06em;font-weight:600}
+.arrows{display:flex;justify-content:flex-end;gap:18px;margin-top:26px}
+.arrow{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  border:1px solid #cdbfb3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  color:#6b625b;
 }
 
-.project-image img{
+/* MATERIALS - dodana sekcija */
+.materials{
+  display:grid;
+  grid-template-columns:360px 1fr;
+  background:#f5efe9;
+}
+
+.material-left{
+  background:#f5efe9;
+  padding:42px 0 42px 110px;
+}
+
+.material-left .section-title{
+  font-size:42px;
+  margin-bottom:34px;
+}
+
+.material-left p{
+  margin-bottom:32px;
+  max-width:230px;
+  font-size:11px;
+  line-height:1.8;
+  color:#514a43;
+  font-weight:500;
+}
+
+.material-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.material-card{
+  position:relative;
+  height:340px;
+  overflow:hidden;
+  color:white;
+  display:flex;
+  align-items:flex-end;
+}
+
+.material-card img{
+  position:absolute;
+  inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
 }
 
-.project h3{
-  margin-top:16px;
-  margin-bottom:8px;
-  font-size:14px;
+.material-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.62),rgba(0,0,0,.05) 60%);
 }
 
-.project p{
-  font-size:10px;
-  text-transform:uppercase;
-  color:#7f756d;
+.material-content{
+  position:relative;
+  z-index:2;
+  padding:34px;
+}
+
+.material-content h3{
+  font-family:var(--serif);
+  font-size:28px;
+  margin-bottom:10px;
+  font-weight:500;
+}
+
+.material-content p{
+  font-size:11px;
+  line-height:1.6;
+  max-width:150px;
+}
+
+.plus{
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  z-index:3;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.7);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
 }
 
 /* PROCESS */
-
-.process{
-  background:#fff;
-  padding:45px 0;
-}
-
+.process{background:#fff;padding:45px 0}
 .process-grid{
   display:grid;
   grid-template-columns:280px 1fr;
   gap:80px;
 }
-
 .steps{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   position:relative;
   margin-top:28px;
 }
-
 .steps::before{
   content:"";
   position:absolute;
@@ -430,12 +398,7 @@ a{
   height:1px;
   background:#ddd1c6;
 }
-
-.step{
-  text-align:center;
-  position:relative;
-}
-
+.step{text-align:center;position:relative}
 .process-icon{
   width:31px;
   height:31px;
@@ -446,7 +409,6 @@ a{
   z-index:2;
   background:white;
 }
-
 .dot{
   position:absolute;
   top:14px;
@@ -457,38 +419,18 @@ a{
   background:#a48d7c;
   border-radius:50%;
 }
-
-.step-number{
-  margin-top:16px;
-  margin-bottom:10px;
-  font-size:9px;
-  color:#8d8279;
-}
-
-.step h4{
-  font-family:var(--serif);
-  font-size:18px;
-  margin-bottom:10px;
-}
-
-.step p{
-  font-size:8.5px;
-  line-height:1.5;
-}
+.step-number{margin-top:16px;margin-bottom:10px;font-size:9px;color:#8d8279}
+.step h4{font-family:var(--serif);font-size:18px;margin-bottom:10px;font-weight:600}
+.step p{font-size:8.5px;line-height:1.5;color:#5f574f}
 
 /* CTA */
-
 .bottom-cta{
   height:170px;
   display:grid;
   grid-template-columns:1fr 420px;
   overflow:hidden;
 }
-
-.bottom-left{
-  position:relative;
-}
-
+.bottom-left{position:relative}
 .bottom-left img{
   position:absolute;
   inset:0;
@@ -496,17 +438,11 @@ a{
   height:100%;
   object-fit:cover;
 }
-
 .bottom-overlay{
   position:absolute;
   inset:0;
-
-  background:linear-gradient(to right,
-  rgba(70,56,46,.72),
-  rgba(70,56,46,.15),
-  rgba(70,56,46,.03));
+  background:linear-gradient(to right,rgba(70,56,46,.72),rgba(70,56,46,.15),rgba(70,56,46,.03));
 }
-
 .bottom-title{
   position:relative;
   z-index:3;
@@ -516,15 +452,14 @@ a{
   flex-direction:column;
   justify-content:center;
 }
-
 .bottom-title h2{
   color:white;
   font-family:var(--serif);
   font-size:38px;
   line-height:1;
   margin-bottom:20px;
+  font-weight:500;
 }
-
 .bottom-title a{
   width:160px;
   height:42px;
@@ -537,7 +472,6 @@ a{
   font-size:10px;
   font-weight:700;
 }
-
 .bottom-contact{
   background:#d8ccc1;
   display:flex;
@@ -546,81 +480,29 @@ a{
   padding-left:60px;
   gap:14px;
 }
-
-.bottom-contact p{
-  display:flex;
-  gap:18px;
-  margin:0;
-  font-size:14px;
-}
-
-.bottom-contact span{
-  font-size:13px;
-}
+.bottom-contact p{display:flex;gap:18px;margin:0;font-size:14px}
+.bottom-contact span{font-size:13px}
 
 /* FOOTER */
-
-.footer{
-  background:#f1e9e2;
-  padding:30px 110px 20px;
-}
-
+.footer{background:#f1e9e2;padding:30px 110px 20px}
 .footer-grid{
   display:grid;
   grid-template-columns:260px 180px 220px 1fr;
   gap:50px;
 }
-
-.footer-logo{
-  display:flex;
-  align-items:center;
-  gap:18px;
-  margin-bottom:14px;
-}
-
+.footer-logo{display:flex;align-items:center;gap:18px;margin-bottom:14px}
 .footer-mark{
   font-family:var(--serif);
   font-size:46px;
   letter-spacing:-10px;
   color:#a18875;
 }
-
-.footer-name{
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:5px;
-}
-
-.footer-sub{
-  margin-top:5px;
-  font-size:6px;
-  letter-spacing:4px;
-  color:#8f857c;
-}
-
-.footer p,
-.footer li{
-  font-size:10px;
-  line-height:1.9;
-  color:#5d554d;
-}
-
-.footer h4{
-  margin-bottom:12px;
-  font-size:9px;
-  text-transform:uppercase;
-}
-
-.footer ul{
-  list-style:none;
-}
-
-.socials{
-  display:flex;
-  gap:12px;
-  margin:12px 0;
-}
-
+.footer-name{font-size:11px;font-weight:700;letter-spacing:5px}
+.footer-sub{margin-top:5px;font-size:6px;letter-spacing:4px;color:#8f857c}
+.footer p,.footer li{font-size:10px;line-height:1.9;color:#5d554d}
+.footer h4{margin-bottom:12px;font-size:9px;text-transform:uppercase;letter-spacing:.06em}
+.footer ul{list-style:none}
+.socials{display:flex;gap:12px;margin:12px 0}
 .newsletter{
   margin-top:16px;
   height:42px;
@@ -628,465 +510,334 @@ a{
   display:grid;
   grid-template-columns:1fr 50px;
 }
+.newsletter input{border:none;background:transparent;padding:0 14px;font-size:10px;outline:none}
+.newsletter button{border:0;border-left:1px solid #cabdb1;background:transparent;font-size:16px}
+.legal{display:flex;gap:40px;margin-top:16px;font-size:8px;color:#7e756d}
 
-.newsletter input{
-  border:none;
-  background:transparent;
-  padding:0 14px;
-}
-
-.newsletter button{
-  border-left:1px solid #cabdb1;
-  background:transparent;
-}
-
-.legal{
-  display:flex;
-  gap:40px;
-  margin-top:16px;
-  font-size:8px;
-  color:#7e756d;
-}
-
-/* IMAGES */
-
-.hero-image img{
-content:url('https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=2200&auto=format&fit=crop');
-}
-
-.project1 img{
-content:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop');
-}
-
-.project2 img{
-content:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop');
-}
-
-.project3 img{
-content:url('https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=1200&auto=format&fit=crop');
-}
-
-.bottom-left img{
-content:url('https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1800&auto=format&fit=crop');
-}
-
+/* RESPONSIVE */
 @media(max-width:1100px){
-
-.container{
-padding-left:28px;
-padding-right:28px;
+  .container{padding-left:28px;padding-right:28px}
+  .navbar{grid-template-columns:1fr 40px}
+  .nav,.cta-btn{display:none}
+  .hero{height:auto;min-height:760px}
+  .hero-image{width:100%;height:760px}
+  .hero-content{grid-template-columns:1fr;height:760px;padding-top:130px}
+  .slider{display:none}
+  .hero h1{font-size:52px}
+  .features{height:auto}
+  .features-grid,.projects-grid,.project-cards,.materials,.material-grid,.process-grid,.steps,.bottom-cta,.footer-grid{
+    grid-template-columns:1fr;
+    height:auto;
+  }
+  .feature{padding:28px 0}
+  .feature:not(:last-child)::after,.steps::before{display:none}
+  .material-left{padding:42px 28px}
+  .material-card{height:280px}
+  .step{padding:18px 0}
+  .bottom-cta{height:auto}
+  .bottom-left{height:260px}
+  .bottom-title{height:260px;padding-left:28px}
+  .bottom-contact{padding:30px 28px}
+  .footer{padding:30px 28px}
 }
-
-.navbar{
-grid-template-columns:1fr 40px;
-}
-
-.nav,
-.cta-btn{
-display:none;
-}
-
-.hero{
-height:auto;
-}
-
-.hero-image{
-width:100%;
-height:650px;
-}
-
-.hero-content{
-grid-template-columns:1fr;
-height:auto;
-padding-top:120px;
-}
-
-.slider{
-display:none;
-}
-
-.hero h1{
-font-size:52px;
-}
-
-.features-grid,
-.projects-grid,
-.project-cards,
-.process-grid,
-.steps,
-.bottom-cta,
-.footer-grid{
-grid-template-columns:1fr;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
 <header class="header">
+  <div class="container navbar">
+    <div class="logo-wrap">
+      <div class="logo-mark">JS</div>
+      <div>
+        <div class="logo-title">JOLLY-S</div>
+        <div class="logo-sub">MIZARSTVO</div>
+      </div>
+    </div>
 
-<div class="container navbar">
+    <nav class="nav">
+      <a href="#domov">Domov</a>
+      <a href="#projekti">Projekti</a>
+      <a href="#storitve">Storitve</a>
+      <a href="#materiali">Materiali</a>
+      <a href="#onas">O nas</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
 
-<div class="logo-wrap">
+    <a href="#kontakt" class="cta-btn">Povpraševanje</a>
 
-<div class="logo-mark">JS</div>
-
-<div>
-<div class="logo-title">JOLLY-S</div>
-<div class="logo-sub">MIZARSTVO</div>
-</div>
-
-</div>
-
-<nav class="nav">
-<a href="#">DOMOV</a>
-<a href="#">PROJEKTI</a>
-<a href="#">STORITVE</a>
-<a href="#">MATERIALI</a>
-<a href="#">O NAS</a>
-<a href="#">KONTAKT</a>
-</nav>
-
-<a href="#" class="cta-btn">POVPRAŠEVANJE</a>
-
-<div class="burger">
-<span></span>
-</div>
-
-</div>
-
+    <div class="burger"><span></span></div>
+  </div>
 </header>
 
-<section class="hero">
+<section id="domov" class="hero">
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=2200&auto=format&fit=crop" alt="Kuhinja po meri">
+  </div>
 
-<div class="hero-image">
-<img alt="">
-</div>
+  <div class="container hero-content">
+    <div class="slider">
+      <strong>01</strong>
+      <div class="slider-line"></div>
+      <span>02</span>
+      <span>03</span>
+    </div>
 
-<div class="container hero-content">
+    <div>
+      <div class="eyebrow">Mizarstvo po meri</div>
 
-<div class="slider">
-<strong>01</strong>
-<div class="slider-line"></div>
-<span>02</span>
-<span>03</span>
-</div>
+      <h1>Prostori,<br>ustvarjeni<br>za življenje.</h1>
 
-<div>
+      <div class="small-line"></div>
 
-<div class="eyebrow">
-MIZARSTVO PO MERI
-</div>
+      <p>Pohištvo in notranje rešitve po meri.<br>Natančno. Estetsko. Brezčasno.</p>
 
-<h1>
-PROSTORI,<br>
-USTVARJENI<br>
-ZA ŽIVLJENJE.
-</h1>
-
-<div class="small-line"></div>
-
-<p>
-Pohištvo in notranje rešitve po meri.<br>
-Natančno. Estetsko. Brezčasno.
-</p>
-
-<a href="#" class="link">
-<span>OGLEJTE SI PROJEKTE</span>
-<span>→</span>
-</a>
-
-</div>
-
-</div>
-
+      <a href="#projekti" class="link">
+        <span>Oglejte si projekte</span>
+        <span>→</span>
+      </a>
+    </div>
+  </div>
 </section>
 
-<section class="features">
+<section id="storitve" class="features">
+  <div class="container features-grid">
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 48 48"><path d="M8 37c12-2 20-11 25-27M13 31C8 22 10 14 19 8c5 10 3 18-4 24M30 21c6-7 12-9 18-6-2 10-9 14-19 12M29 29v11M10 40h30"/></svg>
+      </div>
+      <div><h3>Po meri</h3><p>Vsak kos je načrtovan in izdelan po vaših željah in potrebah.</p></div>
+    </div>
 
-<div class="container features-grid">
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 48 48"><path d="M10 8h28v32H10zM16 13v22M24 13v22M32 13v22M18 24h3M26 24h3M34 24h2"/></svg>
+      </div>
+      <div><h3>Kakovost</h3><p>Uporabljamo preverjene materiale in vrhunske okovje.</p></div>
+    </div>
 
-<div class="feature">
-<div class="feature-icon"></div>
-<div>
-<h3>Po meri</h3>
-<p>Vsak kos je načrtovan in izdelan po vaših željah in potrebah.</p>
-</div>
-</div>
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 48 48"><path d="M24 7c5 0 8 4 8 8s-3 8-8 8-8-4-8-8 3-8 8-8zM10 40c1-8 6-13 14-13s13 5 14 13M12 33l-5 4 4 4M36 33l5 4-4 4"/></svg>
+      </div>
+      <div><h3>Natančnost</h3><p>Najvišja stopnja natančnosti pri načrtovanju in izvedbi.</p></div>
+    </div>
 
-<div class="feature">
-<div class="feature-icon"></div>
-<div>
-<h3>Kakovost</h3>
-<p>Uporabljamo preverjene materiale in vrhunske okovje.</p>
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-icon"></div>
-<div>
-<h3>Natančnost</h3>
-<p>Najvišja stopnja natančnosti pri načrtovanju in izvedbi.</p>
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-icon"></div>
-<div>
-<h3>Brezčasnost</h3>
-<p>Estetika, ki ostane lepa in funkcionalna leta.</p>
-</div>
-</div>
-
-</div>
-
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 13v11l8-5M35 10l3-3M13 10l-3-3"/></svg>
+      </div>
+      <div><h3>Brezčasnost</h3><p>Estetika, ki ostane lepa in funkcionalna leta.</p></div>
+    </div>
+  </div>
 </section>
 
-<section class="projects">
+<section id="projekti" class="projects">
+  <div class="container projects-grid">
+    <div>
+      <div class="kicker">Izbrani projekti</div>
+      <div class="section-title">Projekti,<br>ki govorijo<br>same zase.</div>
+      <a href="#" class="link">
+        <span>Vsi projekti</span>
+        <span>→</span>
+      </a>
+    </div>
 
-<div class="container projects-grid">
+    <div>
+      <div class="project-cards">
+        <div class="project">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop" alt="Projekt kuhinja">
+          </div>
+          <h3>Stanovanje Ljubljana</h3>
+          <p>Kuhinja · Dnevni prostor</p>
+        </div>
 
-<div>
+        <div class="project">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop" alt="Projekt dnevni prostor">
+          </div>
+          <h3>Hiša Medvode</h3>
+          <p>Dnevni prostor</p>
+        </div>
 
-<div class="kicker">
-IZBRANI PROJEKTI
-</div>
+        <div class="project">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=1200&auto=format&fit=crop" alt="Projekt kopalnica">
+          </div>
+          <h3>Vila Bled</h3>
+          <p>Kopalnica</p>
+        </div>
+      </div>
 
-<div class="section-title">
-Projekti,<br>
-ki govorijo<br>
-same zase.
-</div>
-
-</div>
-
-<div>
-
-<div class="project-cards">
-
-<div class="project">
-
-<div class="project-image project1">
-<img alt="">
-</div>
-
-<h3>Stanovanje Ljubljana</h3>
-<p>KUHINJA · DNEVNI PROSTOR</p>
-
-</div>
-
-<div class="project">
-
-<div class="project-image project2">
-<img alt="">
-</div>
-
-<h3>Hiša Medvode</h3>
-<p>DNEVNI PROSTOR</p>
-
-</div>
-
-<div class="project">
-
-<div class="project-image project3">
-<img alt="">
-</div>
-
-<h3>Vila Bled</h3>
-<p>KOPALNICA</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+      <div class="arrows">
+        <div class="arrow">←</div>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="process">
+<section id="materiali" class="materials">
+  <div class="material-left">
+    <div class="kicker">Materiali</div>
 
-<div class="container process-grid">
+    <div class="section-title">Naravni materiali.<br>Pošten pristop.</div>
 
-<div>
+    <p>Izbiramo materiale vrhunske kakovosti, ki prostoru dodajo toplino in karakter.</p>
 
-<div class="kicker">
-NAŠ PROCES
-</div>
+    <a href="#" class="link">
+      <span>Raziščite materiale</span>
+      <span>→</span>
+    </a>
+  </div>
 
-<div class="section-title">
-Od ideje<br>
-do popolnega<br>
-prostora.
-</div>
+  <div class="material-grid">
+    <div class="material-card">
+      <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=1200&auto=format&fit=crop" alt="Les">
+      <div class="material-content"><h3>Les</h3><p>Toplina in naravnost naravnega lesa.</p></div>
+      <div class="plus">+</div>
+    </div>
 
-</div>
+    <div class="material-card">
+      <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1200&auto=format&fit=crop" alt="Kamen">
+      <div class="material-content"><h3>Kamen</h3><p>Eleganca in trajnost v vsakem detajlu.</p></div>
+      <div class="plus">+</div>
+    </div>
 
-<div class="steps">
+    <div class="material-card">
+      <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1200&auto=format&fit=crop" alt="Kovina">
+      <div class="material-content"><h3>Kovina</h3><p>Moderne linije, trdna izvedba.</p></div>
+      <div class="plus">+</div>
+    </div>
 
-<div class="step">
-<div class="process-icon">♧</div>
-<div class="dot"></div>
-<div class="step-number">01</div>
-<h4>Svetovanje</h4>
-<p>Prisluhnemo vašim željam<br>in potrebam.</p>
-</div>
-
-<div class="step">
-<div class="process-icon">▤</div>
-<div class="dot"></div>
-<div class="step-number">02</div>
-<h4>Načrtovanje</h4>
-<p>Ustvarimo funkcionalne<br>in estetske rešitve.</p>
-</div>
-
-<div class="step">
-<div class="process-icon">◎</div>
-<div class="dot"></div>
-<div class="step-number">03</div>
-<h4>Izdelava</h4>
-<p>Natančna izdelava<br>v naši delavnici.</p>
-</div>
-
-<div class="step">
-<div class="process-icon">▢</div>
-<div class="dot"></div>
-<div class="step-number">04</div>
-<h4>Montaža</h4>
-<p>Strokovna montaža in<br>popolna izvedba.</p>
-</div>
-
-</div>
-
-</div>
-
+    <div class="material-card">
+      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop" alt="Tekstil">
+      <div class="material-content"><h3>Tekstil</h3><p>Mehkoba, udobje in prefinjenost.</p></div>
+      <div class="plus">+</div>
+    </div>
+  </div>
 </section>
 
-<section class="bottom-cta">
+<section id="onas" class="process">
+  <div class="container process-grid">
+    <div>
+      <div class="kicker">Naš proces</div>
+      <div class="section-title">Od ideje<br>do popolnega<br>prostora.</div>
+    </div>
 
-<div class="bottom-left">
+    <div class="steps">
+      <div class="step">
+        <div class="process-icon">♧</div>
+        <div class="dot"></div>
+        <div class="step-number">01</div>
+        <h4>Svetovanje</h4>
+        <p>Prisluhnemo vašim željam<br>in potrebam.</p>
+      </div>
 
-<img alt="">
+      <div class="step">
+        <div class="process-icon">▤</div>
+        <div class="dot"></div>
+        <div class="step-number">02</div>
+        <h4>Načrtovanje</h4>
+        <p>Ustvarimo funkcionalne<br>in estetske rešitve.</p>
+      </div>
 
-<div class="bottom-overlay"></div>
+      <div class="step">
+        <div class="process-icon">◎</div>
+        <div class="dot"></div>
+        <div class="step-number">03</div>
+        <h4>Izdelava</h4>
+        <p>Natančna izdelava<br>v naši delavnici.</p>
+      </div>
 
-<div class="bottom-title">
+      <div class="step">
+        <div class="process-icon">▢</div>
+        <div class="dot"></div>
+        <div class="step-number">04</div>
+        <h4>Montaža</h4>
+        <p>Strokovna montaža in<br>popolna izvedba.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h2>
-Imate idejo?<br>
-Uresničimo jo skupaj.
-</h2>
+<section id="kontakt" class="bottom-cta">
+  <div class="bottom-left">
+    <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1800&auto=format&fit=crop" alt="Dnevni prostor">
+    <div class="bottom-overlay"></div>
 
-<a href="#">
-STOPITE V STIK
-<span>→</span>
-</a>
+    <div class="bottom-title">
+      <h2>Imate idejo?<br>Uresničimo jo skupaj.</h2>
+      <a href="mailto:info@jolly-s.si">Stopite v stik <span>→</span></a>
+    </div>
+  </div>
 
-</div>
-
-</div>
-
-<div class="bottom-contact">
-
-<p>⌕ <span>041 622 220</span></p>
-<p>✉ <span>info@jolly-s.si</span></p>
-<p>⌖ <span>Pod Jelšami 10, 1290 Grosuplje</span></p>
-
-</div>
-
+  <div class="bottom-contact">
+    <p>⌕ <span>041 622 220</span></p>
+    <p>✉ <span>info@jolly-s.si</span></p>
+    <p>⌖ <span>Pod Jelšami 10, 1290 Grosuplje</span></p>
+  </div>
 </section>
 
 <footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">
+        <div class="footer-mark">JS</div>
+        <div>
+          <div class="footer-name">JOLLY-S</div>
+          <div class="footer-sub">MIZARSTVO</div>
+        </div>
+      </div>
 
-<div class="footer-grid">
+      <p>Mizarstvo po meri za domove,<br>ki trajajo.</p>
 
-<div>
+      <div class="socials">
+        <span>◎</span>
+        <span>●</span>
+      </div>
 
-<div class="footer-logo">
+      <small>© 2024 JOLLY-S d.o.o.</small>
+    </div>
 
-<div class="footer-mark">JS</div>
+    <div>
+      <h4>Hitre povezave</h4>
+      <ul>
+        <li>Domov</li>
+        <li>Projekti</li>
+        <li>Storitve</li>
+        <li>Materiali</li>
+        <li>Kontakt</li>
+      </ul>
+    </div>
 
-<div>
-<div class="footer-name">JOLLY-S</div>
-<div class="footer-sub">MIZARSTVO</div>
-</div>
+    <div>
+      <h4>Storitve</h4>
+      <ul>
+        <li>Kuhinje</li>
+        <li>Dnevni prostori</li>
+        <li>Spalnice</li>
+        <li>Kopalnice</li>
+        <li>Poslovni prostori</li>
+      </ul>
+    </div>
 
-</div>
+    <div>
+      <h4>Prijavite se na e-novice</h4>
+      <p>Bodite obveščeni o novih projektih<br>in materialih.</p>
 
-<p>
-Mizarstvo po meri za domove,<br>
-ki trajajo.
-</p>
+      <form class="newsletter">
+        <input placeholder="Vaš e-mail naslov">
+        <button type="button">→</button>
+      </form>
 
-<div class="socials">
-<span>◎</span>
-<span>●</span>
-</div>
-
-<small>
-© 2024 JOLLY-S d.o.o.
-</small>
-
-</div>
-
-<div>
-
-<h4>Hitre povezave</h4>
-
-<ul>
-<li>Domov</li>
-<li>Projekti</li>
-<li>Storitve</li>
-<li>Materiali</li>
-<li>Kontakt</li>
-</ul>
-
-</div>
-
-<div>
-
-<h4>Storitve</h4>
-
-<ul>
-<li>Kuhinje</li>
-<li>Dnevni prostori</li>
-<li>Spalnice</li>
-<li>Kopalnice</li>
-<li>Poslovni prostori</li>
-</ul>
-
-</div>
-
-<div>
-
-<h4>Prijavite se na e-novice</h4>
-
-<p>
-Bodite obveščeni o novih projektih<br>
-in materialih.
-</p>
-
-<form class="newsletter">
-
-<input placeholder="Vaš e-mail naslov">
-
-<button>→</button>
-
-</form>
-
-<div class="legal">
-<span>Politika zasebnosti</span>
-<span>Pogoji uporabe</span>
-</div>
-
-</div>
-
-</div>
-
+      <div class="legal">
+        <span>Politika zasebnosti</span>
+        <span>Pogoji uporabe</span>
+      </div>
+    </div>
+  </div>
 </footer>
 
 </body>
