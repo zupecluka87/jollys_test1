@@ -24,7 +24,6 @@ img{width:100%;height:100%;object-fit:cover;display:block}
   --serif:"Cormorant Garamond",serif;
 }
 
-/* HEADER */
 header{
   height:92px;
   position:fixed;
@@ -38,12 +37,7 @@ header{
   backdrop-filter:blur(18px);
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:20px;
-}
-
+.logo{display:flex;align-items:center;gap:20px}
 .logo-mark{
   font-family:var(--serif);
   font-size:62px;
@@ -51,14 +45,12 @@ header{
   color:var(--accent);
   letter-spacing:-.08em;
 }
-
 .logo-text{
   font-weight:700;
   letter-spacing:.36em;
   font-size:13px;
   line-height:1.7;
 }
-
 .logo-text span{
   display:block;
   font-size:10px;
@@ -74,12 +66,7 @@ nav{
   font-weight:600;
   letter-spacing:.08em;
 }
-
-.nav-btn{
-  border:1px solid #bda58d;
-  padding:15px 25px;
-}
-
+.nav-btn{border:1px solid #bda58d;padding:15px 25px}
 .menu{
   width:33px;
   height:22px;
@@ -87,48 +74,31 @@ nav{
   flex-direction:column;
   justify-content:space-between;
 }
+.menu i{height:1px;background:#222;display:block}
 
-.menu i{
-  height:1px;
-  background:#222;
-  display:block;
-}
-
-/* HERO */
 .hero{
   height:100vh;
   min-height:720px;
   position:relative;
   overflow:hidden;
 }
-
 .hero-bg{
   position:absolute;
   inset:0;
   background:url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=95") center right/cover no-repeat;
 }
-
 .hero-bg:before{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    90deg,
-    #fbf8f3 0%,
-    rgba(251,248,243,.98) 20%,
-    rgba(251,248,243,.75) 36%,
-    rgba(251,248,243,.20) 55%,
-    rgba(251,248,243,0) 74%
-  );
+  background:linear-gradient(90deg,#fbf8f3 0%,rgba(251,248,243,.98) 20%,rgba(251,248,243,.75) 36%,rgba(251,248,243,.20) 55%,rgba(251,248,243,0) 74%);
 }
-
 .hero-content{
   position:relative;
   z-index:2;
   width:520px;
   padding:185px 0 0 116px;
 }
-
 .eyebrow{
   font-size:12px;
   letter-spacing:.18em;
@@ -136,7 +106,6 @@ nav{
   color:#6f665e;
   margin-bottom:28px;
 }
-
 h1{
   font-family:var(--serif);
   font-weight:500;
@@ -144,21 +113,18 @@ h1{
   line-height:1.02;
   letter-spacing:-.035em;
 }
-
 .short-line{
   width:44px;
   height:1px;
   background:#b7a28c;
   margin:28px 0;
 }
-
 .hero-text{
   font-size:15px;
   line-height:1.9;
   color:#3d3731;
   margin-bottom:34px;
 }
-
 .hero-link{
   width:250px;
   display:flex;
@@ -169,7 +135,6 @@ h1{
   font-weight:600;
   letter-spacing:.15em;
 }
-
 .hero-pages{
   position:absolute;
   left:30px;
@@ -178,15 +143,8 @@ h1{
   font-size:12px;
   color:#9b8d80;
 }
-
-.hero-pages strong{
-  color:#111;
-}
-
-.hero-pages div{
-  margin:18px 0;
-}
-
+.hero-pages strong{color:#111}
+.hero-pages div{margin:18px 0}
 .hero-pages .vline{
   width:1px;
   height:34px;
@@ -194,7 +152,6 @@ h1{
   margin-left:7px;
 }
 
-/* FEATURES */
 .features{
   height:150px;
   display:grid;
@@ -203,7 +160,6 @@ h1{
   border-bottom:1px solid #eee6dc;
   padding:34px 70px;
 }
-
 .feature{
   display:grid;
   grid-template-columns:54px 1fr;
@@ -211,9 +167,7 @@ h1{
   border-right:1px solid #e6dcd0;
   padding:0 42px;
 }
-
 .feature:last-child{border-right:0}
-
 .feature svg{
   width:34px;
   height:34px;
@@ -221,39 +175,33 @@ h1{
   stroke-width:1.4;
   fill:none;
 }
-
 .feature h3{
   font-family:var(--serif);
   font-size:25px;
   font-weight:500;
   margin-bottom:12px;
 }
-
 .feature p{
   font-size:12px;
   line-height:1.8;
   color:#4c453f;
 }
 
-/* PROJECTS */
 .projects-section{
   padding:70px 78px 74px;
   background:#fffdf9;
 }
-
 .two-col{
   display:grid;
   grid-template-columns:260px 1fr;
   gap:48px;
 }
-
 .section-title{
   font-family:var(--serif);
   font-size:45px;
   line-height:1.07;
   font-weight:500;
 }
-
 .section-link{
   margin-top:44px;
   width:max-content;
@@ -263,13 +211,11 @@ h1{
   font-weight:600;
   letter-spacing:.14em;
 }
-
 .projects{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:22px;
 }
-
 .project img{
   width:100%;
   aspect-ratio:1/1;
@@ -277,13 +223,11 @@ h1{
   object-fit:cover;
   border-radius:3px;
 }
-
 .project h3{
   font-size:16px;
   font-weight:500;
   margin:16px 0 8px;
 }
-
 .project span{
   font-size:11px;
   color:#8b8076;
@@ -291,223 +235,69 @@ h1{
 }
 
 /* MATERIALS */
-<section class="materials-section">
-  <div class="materials-intro">
-    <p class="eyebrow">MATERIALI</p>
-    <h2>Naravni materiali.<br>Pošten pristop.</h2>
-    <p class="intro-text">
-      Izbiramo materiale vrhunske kakovosti,<br>
-      ki prostoru dodajo toplino in karakter.
-    </p>
-    <a href="#" class="materials-link">
-      RAZIŠČITE MATERIALE <span>→</span>
-    </a>
-  </div>
-
-  <div class="material-card wood">
-    <div class="card-content">
-      <h3>Les</h3>
-      <p>Toplina in naravnost<br>naravnega lesa.</p>
-    </div>
-    <button>+</button>
-  </div>
-
-  <div class="material-card stone">
-    <div class="card-content">
-      <h3>Kamen</h3>
-      <p>Eleganca in trajnost<br>v vsakem detajlu.</p>
-    </div>
-    <button>+</button>
-  </div>
-
-  <div class="material-card metal">
-    <div class="card-content">
-      <h3>Kovina</h3>
-      <p>Moderne linije,<br>trdna izvedba.</p>
-    </div>
-    <button>+</button>
-  </div>
-
-  <div class="material-card textile">
-    <div class="card-content">
-      <h3>Tekstil</h3>
-      <p>Mehkoba, udobje<br>in prefinjenost.</p>
-    </div>
-    <button>+</button>
-  </div>
-</section>
-
-<style>
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    background: #f6f3ef;
-    font-family: Arial, sans-serif;
-  }
-
-  .materials-section {
-    width: 100%;
-    height: 280px;
-    display: grid;
-    grid-template-columns: 29% 16.25% 16.25% 16.25% 22.25%;
-    background: #f7f4ef;
-    overflow: hidden;
-  }
-
-  .materials-intro {
-    padding: 46px 0 0 92px;
-    background: linear-gradient(90deg, #fbfaf7 0%, #f4f1ec 100%);
-  }
-
-  .eyebrow {
-    margin: 0 0 18px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.1px;
-    color: #2f2f2f;
-  }
-
-  .materials-intro h2 {
-    margin: 0;
-    font-family: Georgia, serif;
-    font-size: 34px;
-    line-height: 1.16;
-    font-weight: 400;
-    color: #242424;
-  }
-
-  .intro-text {
-    margin: 30px 0 28px;
-    font-size: 13px;
-    line-height: 1.75;
-    font-weight: 600;
-    color: #4d4d4d;
-  }
-
-  .materials-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #cfc6bd;
-    font-size: 12px;
-    letter-spacing: 1px;
-    font-weight: 800;
-    color: #2f2f2f;
-    text-decoration: none;
-  }
-
-  .materials-link span {
-    font-size: 22px;
-    line-height: 1;
-  }
-
-  .material-card {
-    position: relative;
-    height: 280px;
-    padding: 0 32px 35px;
-    display: flex;
-    align-items: flex-end;
-    color: #fff;
-    background-size: cover;
-    background-position: center;
-    border-left: 1px solid rgba(255,255,255,0.18);
-    overflow: hidden;
-  }
-
-  .material-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(0,0,0,0.05) 0%,
-      rgba(0,0,0,0.22) 45%,
-      rgba(0,0,0,0.58) 100%
-    );
-    z-index: 1;
-  }
-
-  .card-content {
-    position: relative;
-    z-index: 2;
-  }
-
-  .card-content h3 {
-    margin: 0 0 14px;
-    font-family: Georgia, serif;
-    font-size: 21px;
-    font-weight: 400;
-    color: #f4f1ed;
-  }
-
-  .card-content p {
-    margin: 0;
-    font-size: 12px;
-    line-height: 1.65;
-    font-weight: 600;
-    color: rgba(255,255,255,0.88);
-  }
-
-  .material-card button {
-    position: absolute;
-    right: 18px;
-    bottom: 25px;
-    z-index: 2;
-    width: 39px;
-    height: 39px;
-    border-radius: 50%;
-    border: 2px solid rgba(255,255,255,0.55);
-    background: rgba(0,0,0,0.18);
-    color: white;
-    font-size: 25px;
-    font-weight: 300;
-    line-height: 34px;
-    cursor: pointer;
-  }
-
-  .wood {
-    background-image:
-      linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.25)),
-      url("images/les.jpg");
-  }
-
-  .stone {
-    background-image:
-      linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.25)),
-      url("images/kamen.jpg");
-  }
-
-  .metal {
-    background-image:
-      linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.25)),
-      url("images/kovina.jpg");
-  }
-
-  .textile {
-    background-image:
-      linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.25)),
-      url("images/tekstil.jpg");
-  }
-
-  @media (max-width: 900px) {
-    .materials-section {
-      height: auto;
-      grid-template-columns: 1fr;
-    }
-
-    .materials-intro {
-      padding: 42px 32px;
-    }
-
-    .material-card {
-      height: 260px;
-    }
-  }
-</style>
+.materials-section{
+  height:280px;
+  display:grid;
+  grid-template-columns:29% repeat(4,1fr);
+  background:#f7f4ef;
+  overflow:hidden;
+}
+.material-intro{
+  padding:42px 38px 0 78px;
+  background:linear-gradient(90deg,#fbfaf7,#f4f1ec);
+}
+.material-intro p{
+  margin-top:26px;
+  font-size:13px;
+  line-height:1.75;
+  font-weight:500;
+  color:#4d453e;
+}
+.material{
+  position:relative;
+  height:280px;
+  overflow:hidden;
+}
+.material:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.22),rgba(0,0,0,.62));
+}
+.material-info{
+  position:absolute;
+  left:30px;
+  bottom:32px;
+  z-index:2;
+  color:white;
+}
+.material-info h3{
+  font-family:var(--serif);
+  font-size:24px;
+  font-weight:500;
+  margin-bottom:12px;
+}
+.material-info p{
+  font-size:12px;
+  line-height:1.65;
+  color:rgba(255,255,255,.88);
+}
+.plus{
+  position:absolute;
+  right:20px;
+  bottom:28px;
+  z-index:2;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.65);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:24px;
+}
 
 /* PROCESS */
 .process-section{
@@ -517,18 +307,12 @@ h1{
   grid-template-columns:260px 1fr;
   gap:48px;
 }
-
 .process-steps{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:20px;
 }
-
-.process-step{
-  text-align:center;
-  position:relative;
-}
-
+.process-step{text-align:center;position:relative}
 .process-step:before{
   content:"";
   position:absolute;
@@ -538,9 +322,7 @@ h1{
   height:1px;
   background:#dacfc2;
 }
-
 .process-step:first-child:before{display:none}
-
 .process-icon{
   background:#fffdf9;
   display:inline-flex;
@@ -548,7 +330,6 @@ h1{
   position:relative;
   z-index:2;
 }
-
 .process-icon svg{
   width:40px;
   height:40px;
@@ -556,41 +337,33 @@ h1{
   stroke-width:1.25;
   fill:none;
 }
-
 .process-num{
   font-size:11px;
   color:#8b8076;
   margin:2px 0 10px;
 }
-
 .process-step h3{
   font-family:var(--serif);
   font-size:23px;
   font-weight:500;
   margin-bottom:7px;
 }
-
 .process-step p{
   font-size:11px;
   line-height:1.65;
   color:#4c453f;
 }
 
-/* CTA */
 .cta{
   height:210px;
   display:grid;
   grid-template-columns:1fr 1.05fr .82fr;
 }
-
 .cta-left{
-  background:
-    linear-gradient(90deg,rgba(0,0,0,.42),rgba(0,0,0,.06)),
-    url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=90") center/cover;
+  background:linear-gradient(90deg,rgba(0,0,0,.42),rgba(0,0,0,.06)),url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=90") center/cover;
   padding:36px 76px;
   color:white;
 }
-
 .cta-left h2{
   font-family:var(--serif);
   font-size:43px;
@@ -598,7 +371,6 @@ h1{
   font-weight:500;
   margin-bottom:22px;
 }
-
 .cta-btn{
   background:white;
   color:#1d1a17;
@@ -610,11 +382,9 @@ h1{
   font-weight:600;
   letter-spacing:.1em;
 }
-
 .cta-mid{
   background:url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=90") center/cover;
 }
-
 .cta-right{
   background:#d8cabd;
   display:flex;
@@ -624,14 +394,8 @@ h1{
   padding:0 55px;
   font-size:14px;
 }
+.cta-right div{display:flex;gap:18px;align-items:center}
 
-.cta-right div{
-  display:flex;
-  gap:18px;
-  align-items:center;
-}
-
-/* FOOTER */
 footer{
   background:#f4ede4;
   display:grid;
@@ -639,13 +403,11 @@ footer{
   gap:50px;
   padding:38px 78px 26px;
 }
-
 footer h4{
   font-size:11px;
   letter-spacing:.14em;
   margin-bottom:16px;
 }
-
 footer a,footer p{
   display:block;
   font-size:12px;
@@ -653,7 +415,6 @@ footer a,footer p{
   margin-bottom:8px;
   line-height:1.6;
 }
-
 .newsletter{
   border:1px solid #cdbca8;
   padding:14px 18px;
@@ -663,7 +424,6 @@ footer a,footer p{
   color:#8b8076;
 }
 
-/* MOBILE */
 @media(max-width:900px){
   header{padding:0 24px}
   nav a{display:none}
@@ -679,7 +439,8 @@ footer a,footer p{
   .feature{border-right:0;border-bottom:1px solid #e6dcd0;padding:24px 0}
   .projects-section,.process-section{padding:50px 26px}
   .projects{grid-template-columns:1fr}
-  .materials-section{padding:0 26px 40px}
+  .materials-section{height:auto}
+  .material-intro{padding:42px 26px}
   .material{height:310px}
   .process-steps{grid-template-columns:1fr;gap:36px}
   .process-step:before{display:none}
@@ -792,22 +553,26 @@ footer a,footer p{
 
   <div class="material">
     <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=700&q=90">
-    <div class="material-info"><h3>Les</h3><p>Toplina in naravnost,<br>naravnega lesa.</p></div><div class="plus">+</div>
+    <div class="material-info"><h3>Les</h3><p>Toplina in naravnost<br>naravnega lesa.</p></div>
+    <div class="plus">+</div>
   </div>
 
   <div class="material">
     <img src="https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=700&q=90">
-    <div class="material-info"><h3>Kamen</h3><p>Eleganca in trajnost<br>v vsakem detajlu.</p></div><div class="plus">+</div>
+    <div class="material-info"><h3>Kamen</h3><p>Eleganca in trajnost<br>v vsakem detajlu.</p></div>
+    <div class="plus">+</div>
   </div>
 
   <div class="material">
     <img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?auto=format&fit=crop&w=700&q=90">
-    <div class="material-info"><h3>Kovina</h3><p>Moderne linije,<br>trdna izvedba.</p></div><div class="plus">+</div>
+    <div class="material-info"><h3>Kovina</h3><p>Moderne linije,<br>trdna izvedba.</p></div>
+    <div class="plus">+</div>
   </div>
 
   <div class="material">
     <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=90">
-    <div class="material-info"><h3>Tekstil</h3><p>Mehkoba, udobje<br>in prefinjenost.</p></div><div class="plus">+</div>
+    <div class="material-info"><h3>Tekstil</h3><p>Mehkoba, udobje<br>in prefinjenost.</p></div>
+    <div class="plus">+</div>
   </div>
 </section>
 
