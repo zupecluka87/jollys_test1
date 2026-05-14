@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Strani"
+    files:
+      - label: "Domov"
+        name: "home"
+        file: "index.html"
+        fields:
+          - {label: "Naslov", name: "title", widget: "string"}
+
+      - label: "Kontakt"
+        name: "kontakt"
+        file: "kontakt.html"
+        fields:
+          - {label: "Naslov", name: "title", widget: "string"}
