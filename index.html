@@ -11,244 +11,135 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:#fbf8f3;color:#201c18}
+a{text-decoration:none;color:inherit}
+img{width:100%;height:100%;object-fit:cover;display:block}
+
 :root{
   --bg:#fbf8f3;
-  --accent:#a58d79;
-  --text:#201c18;
-  --muted:#6d6258;
+  --accent:#ad9278;
   --serif:"Cormorant Garamond",serif;
 }
-body{font-family:Inter,sans-serif;background:#fbf8f3;color:var(--text)}
-a{text-decoration:none;color:inherit}
-img{display:block;width:100%;height:100%;object-fit:cover}
 
-/* HEADER */
 header{
-  height:118px;
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:20;
+  height:92px;
+  position:fixed;
+  top:0;left:0;width:100%;
+  z-index:50;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 72px;
-  background:rgba(251,248,243,.72);
-  backdrop-filter:blur(16px);
+  padding:0 58px;
+  background:rgba(251,248,243,.78);
+  backdrop-filter:blur(18px);
 }
-.logo{display:flex;align-items:center;gap:28px}
-.logo-mark{
-  font-family:var(--serif);
-  font-size:72px;
-  line-height:.8;
-  color:#9b826d;
-  letter-spacing:-.16em;
-}
-.logo-text{
-  font-size:17px;
-  font-weight:700;
-  letter-spacing:.42em;
-}
-.logo-text span{
-  display:block;
-  margin-top:8px;
-  font-size:10px;
-  font-weight:500;
-  letter-spacing:.55em;
-  color:#9b8d80;
-}
-nav{
-  display:flex;
-  align-items:center;
-  gap:54px;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.05em;
-}
-.nav-btn{
-  border:1px solid #bda998;
-  padding:20px 30px;
-}
-.menu{
-  width:38px;
-  height:28px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-.menu i{height:2px;background:#3b3834;display:block}
 
-/* HERO */
-.hero{
-  height:910px;
-  position:relative;
-  overflow:hidden;
-  background:#fbf8f3;
-}
+.logo{display:flex;align-items:center;gap:20px}
+.logo-mark{font-family:var(--serif);font-size:62px;color:var(--accent);letter-spacing:-.08em}
+.logo-text{font-weight:700;letter-spacing:.36em;font-size:13px;line-height:1.7}
+.logo-text span{display:block;font-size:10px;letter-spacing:.42em;font-weight:400}
+
+nav{display:flex;align-items:center;gap:42px;font-size:12px;font-weight:600;letter-spacing:.08em}
+.nav-btn{border:1px solid #bda58d;padding:15px 25px}
+.menu{width:33px;height:22px;display:flex;flex-direction:column;justify-content:space-between}
+.menu i{height:1px;background:#222;display:block}
+
+.hero{height:100vh;min-height:720px;position:relative;overflow:hidden}
 .hero-bg{
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(90deg,#fbf8f3 0%,rgba(251,248,243,.98) 18%,rgba(251,248,243,.75) 36%,rgba(251,248,243,.08) 55%,rgba(251,248,243,0) 74%),
-    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=95") center right/cover no-repeat;
+  position:absolute;inset:0;
+  background:url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=95") center right/cover no-repeat;
 }
-.hero-content{
-  position:relative;
-  z-index:2;
-  width:570px;
-  padding:230px 0 0 180px;
+.hero-bg:before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,#fbf8f3 0%,rgba(251,248,243,.98) 20%,rgba(251,248,243,.75) 36%,rgba(251,248,243,.20) 55%,rgba(251,248,243,0) 74%);
 }
-.eyebrow{
-  font-size:13px;
-  letter-spacing:.16em;
-  font-weight:700;
-  color:#6f665e;
-  margin-bottom:42px;
-}
-h1{
-  font-family:var(--serif);
-  font-size:72px;
-  line-height:1.08;
-  font-weight:500;
-  letter-spacing:-.02em;
-}
-.short-line{
-  width:46px;
-  height:1px;
-  background:#a99582;
-  margin:36px 0;
-}
-.hero-text{
-  font-size:17px;
-  line-height:1.8;
-  color:#302c28;
-  margin-bottom:55px;
-}
-.hero-link{
-  width:310px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:2px solid #c7b8aa;
-  padding-bottom:12px;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.12em;
-}
-.hero-link span{font-size:24px}
-.hero-pages{
-  position:absolute;
-  left:46px;
-  top:590px;
-  z-index:4;
-  font-size:16px;
-  color:#b6aaa0;
-}
+.hero-content{position:relative;z-index:2;width:520px;padding:185px 0 0 116px}
+.eyebrow{font-size:12px;letter-spacing:.18em;font-weight:600;color:#6f665e;margin-bottom:28px}
+h1{font-family:var(--serif);font-weight:500;font-size:70px;line-height:1.02;letter-spacing:-.035em}
+.short-line{width:44px;height:1px;background:#b7a28c;margin:28px 0}
+.hero-text{font-size:15px;line-height:1.9;color:#3d3731;margin-bottom:34px}
+.hero-link{width:250px;display:flex;justify-content:space-between;border-bottom:1px solid #ad9278;padding-bottom:10px;font-size:12px;font-weight:600;letter-spacing:.15em}
+
+.hero-pages{position:absolute;left:30px;top:420px;z-index:3;font-size:12px;color:#9b8d80}
 .hero-pages strong{color:#111}
-.hero-pages div{margin:20px 0}
-.hero-pages .vline{
-  width:2px;
-  height:54px;
-  background:#6f665e;
-  margin-left:8px;
-}
+.hero-pages div{margin:18px 0}
+.hero-pages .vline{width:1px;height:34px;background:#111;margin-left:7px}
 
-/* PROCESS */
-.process-section{
-  height:260px;
-  background:#fffdf9;
-  display:grid;
-  grid-template-columns:310px 1fr;
-  gap:60px;
-  padding:40px 110px 0;
-}
-.process-title .eyebrow{
-  margin-bottom:18px;
-  font-size:11px;
-}
-.process-title .section-title{
-  font-family:var(--serif);
-  font-size:45px;
-  line-height:1.06;
-  font-weight:500;
-}
-.process-steps{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  align-items:start;
-  gap:36px;
-  padding-top:26px;
-}
-.process-step{
-  text-align:center;
-  position:relative;
-}
-.process-step:before{
-  content:"";
-  position:absolute;
-  top:22px;
-  left:-50%;
-  width:100%;
-  height:1px;
-  background:#ded4ca;
-}
+.features{height:150px;display:grid;grid-template-columns:repeat(4,1fr);background:#fffdf9;border-bottom:1px solid #eee6dc;padding:34px 70px}
+.feature{display:grid;grid-template-columns:54px 1fr;gap:20px;border-right:1px solid #e6dcd0;padding:0 42px}
+.feature:last-child{border-right:0}
+.feature svg{width:34px;height:34px;stroke:var(--accent);stroke-width:1.4;fill:none}
+.feature h3{font-family:var(--serif);font-size:25px;font-weight:500;margin-bottom:12px}
+.feature p{font-size:12px;line-height:1.8;color:#4c453f}
+
+.projects-section{padding:70px 78px 74px;background:#fffdf9}
+.two-col{display:grid;grid-template-columns:260px 1fr;gap:48px}
+.section-title{font-family:var(--serif);font-size:45px;line-height:1.07;font-weight:500}
+.section-link{margin-top:44px;width:max-content;border-bottom:1px solid #ad9278;padding-bottom:10px;font-size:12px;font-weight:600;letter-spacing:.14em}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.project img{aspect-ratio:1/1;height:auto;border-radius:3px}
+.project h3{font-size:16px;font-weight:500;margin:16px 0 8px}
+.project span{font-size:11px;color:#8b8076;letter-spacing:.12em}
+
+.materials-section{height:280px;display:grid;grid-template-columns:29% repeat(4,1fr);background:#f7f4ef;overflow:hidden}
+.material-intro{padding:42px 38px 0 78px;background:linear-gradient(90deg,#fbfaf7,#f4f1ec)}
+.material-intro p{margin-top:26px;font-size:13px;line-height:1.75;font-weight:500;color:#4d453e}
+.material{position:relative;height:280px;overflow:hidden}
+.material:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.22),rgba(0,0,0,.62))}
+.material-info{position:absolute;left:30px;bottom:32px;z-index:2;color:white}
+.material-info h3{font-family:var(--serif);font-size:24px;font-weight:500;margin-bottom:12px}
+.material-info p{font-size:12px;line-height:1.65;color:rgba(255,255,255,.88)}
+.plus{position:absolute;right:20px;bottom:28px;z-index:2;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.65);display:flex;align-items:center;justify-content:center;color:white;font-size:24px}
+
+.process-section{background:#fffdf9;padding:48px 78px 42px;display:grid;grid-template-columns:260px 1fr;gap:48px}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.process-step{text-align:center;position:relative}
+.process-step:before{content:"";position:absolute;top:23px;left:-50%;width:100%;height:1px;background:#dacfc2}
 .process-step:first-child:before{display:none}
-.process-icon{
-  width:48px;
-  height:48px;
-  margin:0 auto 2px;
-  background:#fffdf9;
-  position:relative;
-  z-index:2;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.process-icon svg{
-  width:42px;
-  height:42px;
-  stroke:#a58d79;
-  stroke-width:1.35;
-  fill:none;
-}
-.process-num{
-  font-size:12px;
-  font-weight:700;
-  color:#6f665e;
-  margin-bottom:16px;
-}
-.process-step h3{
-  font-family:var(--serif);
-  font-size:22px;
-  font-weight:600;
-  margin-bottom:10px;
-}
-.process-step p{
-  font-size:12px;
-  line-height:1.7;
-  color:#3f3934;
-}
+.process-icon{background:#fffdf9;display:inline-flex;padding:0 12px;position:relative;z-index:2}
+.process-icon svg{width:40px;height:40px;stroke:var(--accent);stroke-width:1.25;fill:none}
+.process-num{font-size:11px;color:#8b8076;margin:2px 0 10px}
+.process-step h3{font-family:var(--serif);font-size:23px;font-weight:500;margin-bottom:7px}
+.process-step p{font-size:11px;line-height:1.65;color:#4c453f}
 
-/* REST */
-.features,.projects-section,.materials-section,.cta,footer{display:none}
+.cta{height:210px;display:grid;grid-template-columns:68.5% 31.5%;background:#d8cabd}
+.cta-left{
+  height:210px;
+  padding:30px 0 0 82px;
+  color:white;
+  background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.18),rgba(0,0,0,.02)),url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=90") center/cover;
+}
+.cta-left h2{font-family:var(--serif);font-size:31px;line-height:1.05;font-weight:500;margin-bottom:18px;color:#fff}
+.cta-btn{width:144px;height:44px;background:white;color:#1f1d1a;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font-size:10px;font-weight:700;letter-spacing:.05em;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.cta-right{height:210px;background:linear-gradient(90deg,#d8cabd,#efe5dc);display:flex;flex-direction:column;justify-content:center;gap:20px;padding-left:66px;font-size:13px;color:#2f2b27}
+.cta-right div{display:grid;grid-template-columns:24px 1fr;align-items:center;gap:18px}
+.cta-right svg{width:18px;height:18px;stroke:#766c63;stroke-width:1.6;fill:none}
+
+footer{background:#f4ede4;display:grid;grid-template-columns:270px 1fr 1fr 1.5fr;gap:50px;padding:38px 78px 26px}
+footer h4{font-size:11px;letter-spacing:.14em;margin-bottom:16px}
+footer a,footer p{display:block;font-size:12px;color:#4c453f;margin-bottom:8px;line-height:1.6}
+.newsletter{border:1px solid #cdbca8;padding:14px 18px;margin-top:14px;display:flex;justify-content:space-between;color:#8b8076}
 
 @media(max-width:900px){
-  header{height:86px;padding:0 24px}
+  header{padding:0 24px}
   nav a,.nav-btn{display:none}
-  .logo-mark{font-size:52px}
-  .logo-text{font-size:13px}
   .hero{height:auto;min-height:760px}
-  .hero-content{padding:150px 28px 0;width:auto}
-  h1{font-size:50px}
+  .hero-content{padding:150px 26px 0;width:auto}
+  h1{font-size:54px}
   .hero-pages{display:none}
-  .process-section{
-    height:auto;
-    grid-template-columns:1fr;
-    padding:45px 28px;
-  }
+  .features,.two-col,.materials-section,.process-section,footer,.cta{grid-template-columns:1fr}
+  .features{height:auto;padding:30px 26px}
+  .feature{border-right:0;border-bottom:1px solid #e6dcd0;padding:24px 0}
+  .projects-section,.process-section{padding:50px 26px}
+  .projects{grid-template-columns:1fr}
+  .materials-section{height:auto}
+  .material-intro{padding:42px 26px}
+  .material{height:310px}
   .process-steps{grid-template-columns:1fr;gap:36px}
   .process-step:before{display:none}
+  .cta{height:auto}
+  .cta-left,.cta-right{height:auto;padding:38px 26px}
+  footer{padding:40px 26px}
 }
 </style>
 </head>
@@ -260,14 +151,8 @@ h1{
     <div class="logo-mark">JS</div>
     <div class="logo-text">JOLLY-S<span>MIZARSTVO</span></div>
   </div>
-
   <nav>
-    <a>DOMOV</a>
-    <a>PROJEKTI</a>
-    <a>STORITVE</a>
-    <a>MATERIALI</a>
-    <a>O NAS</a>
-    <a>KONTAKT</a>
+    <a>DOMOV</a><a>PROJEKTI</a><a>STORITVE</a><a>MATERIALI</a><a>O NAS</a><a>KONTAKT</a>
     <a class="nav-btn">POVPRAŠEVANJE</a>
     <div class="menu"><i></i><i></i><i></i></div>
   </nav>
@@ -275,87 +160,96 @@ h1{
 
 <section class="hero">
   <div class="hero-bg"></div>
-
-  <div class="hero-pages">
-    <div><strong>01</strong></div>
-    <div class="vline"></div>
-    <div>02</div>
-    <div>03</div>
-  </div>
-
+  <div class="hero-pages"><div><strong>01</strong></div><div class="vline"></div><div>02</div><div>03</div></div>
   <div class="hero-content">
     <div class="eyebrow">MIZARSTVO PO MERI</div>
     <h1>PROSTORI,<br>USTVARJENI<br>ZA ŽIVLJENJE.</h1>
     <div class="short-line"></div>
-    <div class="hero-text">
-      Pohištvo in notranje rešitve po meri.<br>
-      Natančno. Estetsko. Brezčasno.
-    </div>
+    <div class="hero-text">Pohištvo in notranje rešitve po meri.<br>Natančno. Estetsko. Brezčasno.</div>
     <a class="hero-link">OGLEJTE SI PROJEKTE <span>→</span></a>
   </div>
 </section>
 
-<section class="process-section">
-  <div class="process-title">
-    <div class="eyebrow">NAŠ PROCES</div>
-    <div class="section-title">Od ideje<br>do popolnega<br>prostora.</div>
-  </div>
+<section class="features">
+  <div class="feature"><svg viewBox="0 0 64 64"><path d="M16 42c14 0 24-10 24-26-14 0-24 10-24 26z"/><path d="M28 50c0-18 12-28 26-28 0 16-10 28-26 28z"/><path d="M16 42l18-18M28 50l16-16"/></svg><div><h3>Po meri</h3><p>Vsak kos je načrtovan in izdelan po vaših željah in potrebah.</p></div></div>
+  <div class="feature"><svg viewBox="0 0 64 64"><rect x="14" y="12" width="36" height="40"/><path d="M22 18v28M32 18v28M42 18v28"/><path d="M14 28h36"/></svg><div><h3>Kakovost</h3><p>Uporabljamo preverjene materiale in vrhunske okovje.</p></div></div>
+  <div class="feature"><svg viewBox="0 0 64 64"><circle cx="32" cy="18" r="8"/><path d="M20 48c2-11 22-11 24 0"/><path d="M18 32h28M46 32l-6-6M46 32l-6 6"/></svg><div><h3>Natančnost</h3><p>Najvišja stopnja natančnosti pri načrtovanju in izvedbi.</p></div></div>
+  <div class="feature"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20"/><path d="M32 18v14l9-6"/><path d="M46 18l4-4M18 18l-4-4"/></svg><div><h3>Brezčasnost</h3><p>Estetika, ki ostane lepa in funkcionalna leta.</p></div></div>
+</section>
 
-  <div class="process-steps">
-    <div class="process-step">
-      <div class="process-icon">
-        <svg viewBox="0 0 64 64">
-          <circle cx="24" cy="22" r="8"/>
-          <circle cx="42" cy="22" r="8"/>
-          <path d="M14 48c2-10 18-10 20 0"/>
-          <path d="M32 48c2-10 18-10 20 0"/>
-        </svg>
-      </div>
-      <div class="process-num">01</div>
-      <h3>Svetovanje</h3>
-      <p>Prisluhnemo vašim željam<br>in potrebam.</p>
+<section class="projects-section">
+  <div class="two-col">
+    <div>
+      <div class="eyebrow">IZBRANI PROJEKTI</div>
+      <div class="section-title">Projekti,<br>ki govorijo<br>sami zase.</div>
+      <div class="section-link">VSI PROJEKTI →</div>
     </div>
-
-    <div class="process-step">
-      <div class="process-icon">
-        <svg viewBox="0 0 64 64">
-          <rect x="14" y="14" width="36" height="36"/>
-          <path d="M22 24h20M22 32h20M22 40h12"/>
-          <path d="M44 16l6 6-10 10-6-6z"/>
-        </svg>
-      </div>
-      <div class="process-num">02</div>
-      <h3>Načrtovanje</h3>
-      <p>Ustvarimo funkcionalne<br>in estetske rešitve.</p>
-    </div>
-
-    <div class="process-step">
-      <div class="process-icon">
-        <svg viewBox="0 0 64 64">
-          <circle cx="32" cy="32" r="18"/>
-          <path d="M32 14v8M50 32h-8M32 50v-8M14 32h8"/>
-          <path d="M24 32l6 6 10-12"/>
-        </svg>
-      </div>
-      <div class="process-num">03</div>
-      <h3>Izdelava</h3>
-      <p>Natančna izdelava<br>v naši delavnici.</p>
-    </div>
-
-    <div class="process-step">
-      <div class="process-icon">
-        <svg viewBox="0 0 64 64">
-          <rect x="18" y="14" width="28" height="36"/>
-          <path d="M24 20h16M24 28h16M24 36h16"/>
-          <path d="M32 50v6"/>
-        </svg>
-      </div>
-      <div class="process-num">04</div>
-      <h3>Montaža</h3>
-      <p>Strokovna montaža in<br>popolna izvedba.</p>
+    <div class="projects">
+      <div class="project"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=90"><h3>Stanovanje Ljubljana</h3><span>KUHINJA · DNEVNI PROSTOR</span></div>
+      <div class="project"><img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=90"><h3>Hiša Medvode</h3><span>DNEVNI PROSTOR</span></div>
+      <div class="project"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=90"><h3>Vila Bled</h3><span>KOPALNICA</span></div>
     </div>
   </div>
 </section>
 
+<section class="materials-section">
+  <div class="material-intro">
+    <div class="eyebrow">MATERIALI</div>
+    <div class="section-title">Naravni materiali.<br>Pošten pristop.</div>
+    <p>Izbiramo materiale vrhunske kakovosti, ki prostoru dodajo toplino in karakter.</p>
+    <div class="section-link">RAZIŠČITE MATERIALE →</div>
+  </div>
+  <div class="material"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=700&q=90"><div class="material-info"><h3>Les</h3><p>Toplina in naravnost<br>naravnega lesa.</p></div><div class="plus">+</div></div>
+  <div class="material"><img src="https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=700&q=90"><div class="material-info"><h3>Kamen</h3><p>Eleganca in trajnost<br>v vsakem detajlu.</p></div><div class="plus">+</div></div>
+  <div class="material"><img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?auto=format&fit=crop&w=700&q=90"><div class="material-info"><h3>Kovina</h3><p>Moderne linije,<br>trdna izvedba.</p></div><div class="plus">+</div></div>
+  <div class="material"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=90"><div class="material-info"><h3>Tekstil</h3><p>Mehkoba, udobje<br>in prefinjenost.</p></div><div class="plus">+</div></div>
+</section>
+
+<section class="process-section">
+  <div>
+    <div class="eyebrow">NAŠ PROCES</div>
+    <div class="section-title">Od ideje<br>do popolnega<br>prostora.</div>
+  </div>
+  <div class="process-steps">
+    <div class="process-step"><div class="process-icon"><svg viewBox="0 0 64 64"><circle cx="24" cy="22" r="8"/><circle cx="42" cy="22" r="8"/><path d="M14 48c2-10 18-10 20 0"/><path d="M32 48c2-10 18-10 20 0"/></svg></div><div class="process-num">01</div><h3>Svetovanje</h3><p>Prisluhnemo vašim željam<br>in potrebam.</p></div>
+    <div class="process-step"><div class="process-icon"><svg viewBox="0 0 64 64"><rect x="14" y="14" width="36" height="36"/><path d="M22 24h20M22 32h20M22 40h12"/><path d="M44 16l6 6-10 10-6-6z"/></svg></div><div class="process-num">02</div><h3>Načrtovanje</h3><p>Ustvarimo funkcionalne<br>in estetske rešitve.</p></div>
+    <div class="process-step"><div class="process-icon"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="18"/><path d="M32 14v8M50 32h-8M32 50v-8M14 32h8"/><path d="M24 32l6 6 10-12"/></svg></div><div class="process-num">03</div><h3>Izdelava</h3><p>Natančna izdelava<br>v naši delavnici.</p></div>
+    <div class="process-step"><div class="process-icon"><svg viewBox="0 0 64 64"><rect x="18" y="14" width="28" height="36"/><path d="M24 20h16M24 28h16M24 36h16"/><path d="M32 50v6"/></svg></div><div class="process-num">04</div><h3>Montaža</h3><p>Strokovna montaža in<br>popolna izvedba.</p></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-left">
+    <h2>Imate idejo?<br>Uresničimo jo skupaj.</h2>
+    <a class="cta-btn">STOPITE V STIK <span>→</span></a>
+  </div>
+
+  <div class="cta-right">
+    <div>
+      <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7l.4 2.6a2 2 0 0 1-.6 1.8l-1.3 1.3a15 15 0 0 0 5.1 5.1l1.3-1.3a2 2 0 0 1 1.8-.6l2.6.4a2 2 0 0 1 1.7 1.9z"/></svg>
+      <span>041 622 220</span>
+    </div>
+    <div>
+      <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>
+      <span>info@jolly-s.si</span>
+    </div>
+    <div>
+      <svg viewBox="0 0 24 24"><path d="M12 21s7-5.2 7-12a7 7 0 0 0-14 0c0 6.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      <span>Pod Ješlami 10, 1290 Grosuplje</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="logo"><div class="logo-mark">JS</div><div class="logo-text">JOLLY-S<span>MIZARSTVO</span></div></div>
+    <p>Mizarstvo po meri za domove,<br>ki trajajo.</p>
+  </div>
+  <div><h4>HITRE POVEZAVE</h4><a>Domov</a><a>Projekti</a><a>Storitve</a><a>Materiali</a><a>O nas</a><a>Kontakt</a></div>
+  <div><h4>STORITVE</h4><a>Kuhinje</a><a>Dnevni prostori</a><a>Spalnice</a><a>Kopalnice</a><a>Poslovni prostori</a><a>Notranja oprema</a></div>
+  <div><h4>PRIJAVITE SE NA E-NOVICE</h4><p>Bodite obveščeni o novih projektih<br>in materialih.</p><div class="newsletter">Vaš e-mail naslov <span>→</span></div></div>
+</footer>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </body>
 </html>
