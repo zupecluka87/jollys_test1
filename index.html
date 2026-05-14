@@ -1,32 +1,92 @@
----
-title: test
----
 <!doctype html>
 <html lang="sl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-
   <title>JOLLY-S Mizarstvo</title>
-
   <meta name="description" content="Mizarstvo po meri za domove, ki trajajo.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;background:#f4efe7;color:#1b1b18;font-family:Inter,sans-serif}
+    a{text-decoration:none;color:inherit}
+    header{position:fixed;top:0;left:0;width:100%;z-index:10;padding:26px 5vw;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-weight:700;letter-spacing:.08em}
+    nav{display:flex;gap:26px;font-size:14px}
+    .hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;padding:120px 5vw 60px;gap:60px}
+    h1{font-family:"Cormorant Garamond",serif;font-size:clamp(54px,8vw,120px);line-height:.9;margin:0 0 28px}
+    .lead{font-size:18px;max-width:520px;line-height:1.7;color:#565148}
+    .btn{display:inline-block;margin-top:34px;border:1px solid #1b1b18;padding:15px 24px;border-radius:999px;font-weight:600}
+    .image{height:72vh;border-radius:28px;background:linear-gradient(90deg,#f4efe7 0%,rgba(244,239,231,.45) 25%,rgba(244,239,231,0) 55%),url("https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1400&q=80") center/cover}
+    section{padding:90px 5vw}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .card{background:#fffaf1;border:1px solid #ded5c8;border-radius:24px;padding:34px;min-height:220px}
+    .card h3{margin-top:0;font-family:"Cormorant Garamond",serif;font-size:34px}
+    .card p{line-height:1.7;color:#625c52}
+    .mood{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .mood-img{height:520px;border-radius:28px;background:#d8cabb;display:flex;align-items:center;justify-content:center;color:#756b60;font-weight:600}
+    footer{padding:50px 5vw;border-top:1px solid #d8cfc1;display:flex;justify-content:space-between;color:#6b6258}
+    @media(max-width:900px){.hero,.mood{grid-template-columns:1fr}.image{height:520px}.grid{grid-template-columns:1fr}nav{display:none}}
+  </style>
 </head>
 
-<body data-page="home">
+<body>
+  <header>
+    <div class="logo">JOLLY-S</div>
+    <nav>
+      <a href="index.html">Domov</a>
+      <a href="projekti.html">Projekti</a>
+      <a href="materiali.html">Mood board</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
 
-  <div id="app"></div>
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Mizarstvo po meri za domove, ki trajajo.</h1>
+        <p class="lead">Izdelujemo kuhinje, omare, notranjo opremo in unikatne lesene rešitve po meri. Minimalno. Natančno. Brezčasno.</p>
+        <a class="btn" href="kontakt.html">Pošlji povpraševanje</a>
+      </div>
+      <div class="image"></div>
+    </section>
 
-  <script src="/assets/js/app.js"></script>
+    <section>
+      <div class="grid">
+        <div class="card">
+          <h3>Kuhinje</h3>
+          <p>Premišljene kuhinje po meri, prilagojene prostoru, navadam in materialom.</p>
+        </div>
+        <div class="card">
+          <h3>Omare</h3>
+          <p>Vgradne, garderobne in tehnične omare z elegantnimi detajli.</p>
+        </div>
+        <div class="card">
+          <h3>Interier</h3>
+          <p>Celostna notranja oprema za domove, apartmaje in poslovne prostore.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mood">
+      <div>
+        <h1>Mood board</h1>
+        <p class="lead">Tukaj lahko kasneje vstaviš svojo sliko materialov, vzorcev, barv ali inspiracije.</p>
+      </div>
+      <div class="mood-img">TUKAJ VSTAVI SLIKO</div>
+    </section>
+  </main>
+
+  <footer>
+    <div>JOLLY-S Mizarstvo</div>
+    <div>Staje 8a, 1292 Ig</div>
+  </footer>
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
@@ -38,6 +98,5 @@ title: test
       });
     }
   </script>
-
 </body>
 </html>
